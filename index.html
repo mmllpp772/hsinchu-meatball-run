@@ -76,6 +76,10 @@ li{display:flex;flex-direction:column}
 .photo blockquote{display:grid;place-items:center;min-height:420px;padding:20px;text-align:center}
 .photo blockquote a{color:var(--meat)}
 .links a:focus-visible{outline:3px solid var(--chili);outline-offset:3px}
+.photo.empty{display:grid;place-items:center;aspect-ratio:4/5;min-height:0;text-decoration:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='84' fill='%23fbf6e8'/%3E%3Ccircle cx='100' cy='100' r='70' fill='%23e3a93a'/%3E%3Ccircle cx='78' cy='86' r='22' fill='%2355301a'/%3E%3Ccircle cx='122' cy='92' r='22' fill='%2366391d'/%3E%3Ccircle cx='98' cy='126' r='22' fill='%235d341a'/%3E%3C/svg%3E") center 38%/80% auto no-repeat var(--broth)}
+.photo.empty .nopost{align-self:end;margin-bottom:22px;background:var(--noodle);color:var(--meat);font-size:14px;line-height:1.5;
+  text-align:center;padding:6px 14px;border:2px solid var(--meat)}
 .photo .ball{position:absolute;z-index:2;left:-14px;top:-14px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
   background:radial-gradient(circle at 34% 30%,#9a6338,#55301a 70%);color:var(--noodle);border:3px solid var(--noodle);
   font-family:"Archivo",sans-serif;font-weight:800;font-size:18px}
@@ -134,7 +138,7 @@ dialog.ig .instagram-media{margin:0 auto!important;min-width:0!important;width:1
   </div>
 
   <div class="course">
-    <svg id="map" viewBox="0 0 640 760" role="img" aria-label="從芎林一哥炊粉到東門米粉攤的六站吃貨路線">
+    <svg id="map" viewBox="0 0 640 760" role="img" aria-label="從竹東大同小吃到新竹尚尚黃的六站吃貨路線">
       <defs>
         <radialGradient id="mb" cx="34%" cy="30%" r="75%">
           <stop offset="0" stop-color="#b07848"/><stop offset=".45" stop-color="#7a4726"/><stop offset="1" stop-color="#3f220f"/>
@@ -159,60 +163,60 @@ dialog.ig .instagram-media{margin:0 auto!important;min-width:0!important;width:1
 
 <main class="list">
   <h2>六個補給站</h2>
-  <p class="lede">從芎林一路吃回新竹舊城，照這個順序走，早餐吃到晚餐。每家附上 IG 上讚數最高的貼文。</p>
+  <p class="lede">六家都是 Google 4.4 星以上、200 則評論以上。從竹東吃到竹北，再回新竹舊城。</p>
   <ol>
     <li id="s1">
-      <div class="photo"><span class="ball">1</span><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DTmg1LsgUxH/?utm_source=ig_embed" data-instgrm-version="14"><a href="https://www.instagram.com/p/DTmg1LsgUxH/">在 Instagram 查看這則貼文</a></blockquote></div>
+      <a class="photo empty" href="https://www.google.com/maps/place/?q=place_id:ChIJ6QF9cuRHaDQRfDbIKmvywy4" target="_blank" rel="noopener" aria-label="大同小吃 的 Google 地圖"><span class="ball">1</span><span class="nopost">IG 上還沒有<br>單獨介紹這家的貼文</span></a>
       <div class="info">
-        <h3>一哥炊粉<span class="mark">必比登</span></h3>
-        <p class="where">芎林鄉福昌街 621 號</p>
-        <p class="eat">炊粉＋貢丸湯</p>
-        <p class="links"><a href="https://www.instagram.com/p/DTmg1LsgUxH/">IG 熱門貼文 ♥ 1,126</a><a href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E7%AB%B9%E7%B8%A3%E8%8A%8E%E6%9E%97%E9%84%89%E7%A6%8F%E6%98%8C%E8%A1%97621%E8%99%9F%20%E4%B8%80%E5%93%A5%E7%82%8A%E7%B2%89" target="_blank" rel="noopener">地圖</a></p>
+        <h3>大同小吃</h3>
+        <p class="where">竹東鎮竹榮街 15 號</p>
+        <p class="eat">Google 4.5 ★・451 則評論</p>
+        <p class="links"><a href="https://www.google.com/maps/place/?q=place_id:ChIJ6QF9cuRHaDQRfDbIKmvywy4" target="_blank" rel="noopener">Google 地圖</a></p>
       </div>
     </li>
     <li id="s2">
-      <div class="photo"><span class="ball">2</span><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CiJx7woLikY/?utm_source=ig_embed" data-instgrm-version="14"><a href="https://www.instagram.com/p/CiJx7woLikY/">在 Instagram 查看這則貼文</a></blockquote></div>
+      <div class="photo"><span class="ball">2</span><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DcL2bzNpdAV/?utm_source=ig_embed" data-instgrm-version="14"><a href="https://www.instagram.com/p/DcL2bzNpdAV/">在 Instagram 查看這則貼文</a></blockquote></div>
       <div class="info">
-        <h3>石家魚丸</h3>
-        <p class="where">東區興學街，80 年老店</p>
-        <p class="eat">手工貢丸湯</p>
-        <p class="links"><a href="https://www.instagram.com/p/CiJx7woLikY/">IG 熱門貼文 ♥ 1,259</a><a href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E7%AB%B9%20%E8%88%88%E5%AD%B8%E8%A1%97%20%E7%9F%B3%E5%AE%B6%E9%AD%9A%E4%B8%B8" target="_blank" rel="noopener">地圖</a></p>
+        <h3>很南寮小卷米粉</h3>
+        <p class="where">竹東鎮仁愛路 330 巷 9 號</p>
+        <p class="eat">Google 4.7 ★・203 則評論</p>
+        <p class="links"><a href="https://www.instagram.com/p/DcL2bzNpdAV/">IG 熱門貼文 ♥ 345</a><a href="https://www.google.com/maps/place/?q=place_id:ChIJLXv5IBtHaDQR0N1yEC9lpBk" target="_blank" rel="noopener">Google 地圖</a></p>
       </div>
     </li>
     <li id="s3">
-      <div class="photo"><span class="ball">3</span><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CgvrW2kFC6M/?utm_source=ig_embed" data-instgrm-version="14"><a href="https://www.instagram.com/p/CgvrW2kFC6M/">在 Instagram 查看這則貼文</a></blockquote></div>
+      <a class="photo empty" href="https://www.google.com/maps/place/?q=place_id:ChIJcdgV0rs3aDQRkWch3Yz9riM" target="_blank" rel="noopener" aria-label="梁小姐米粉湯 的 Google 地圖"><span class="ball">3</span><span class="nopost">IG 上還沒有<br>單獨介紹這家的貼文</span></a>
       <div class="info">
-        <h3>海瑞摃丸</h3>
-        <p class="where">北區西門街 98 號，1948 年創立</p>
-        <p class="eat">原味＋怪口味貢丸</p>
-        <p class="links"><a href="https://www.instagram.com/p/CgvrW2kFC6M/">IG 熱門貼文 ♥ 2,913</a><a href="https://www.instagram.com/hai_rei_foods/">官方 IG</a><a href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E7%AB%B9%E5%B8%82%E8%A5%BF%E9%96%80%E8%A1%9798%E8%99%9F%20%E6%B5%B7%E7%91%9E%E6%91%83%E4%B8%B8" target="_blank" rel="noopener">地圖</a></p>
+        <h3>梁小姐米粉湯</h3>
+        <p class="where">竹北市文興路 315 號</p>
+        <p class="eat">Google 4.5 ★・959 則評論</p>
+        <p class="links"><a href="https://www.google.com/maps/place/?q=place_id:ChIJcdgV0rs3aDQRkWch3Yz9riM" target="_blank" rel="noopener">Google 地圖</a></p>
       </div>
     </li>
     <li id="s4">
-      <div class="photo"><span class="ball">4</span><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C3Jq9qNJI9l/?utm_source=ig_embed" data-instgrm-version="14"><a href="https://www.instagram.com/p/C3Jq9qNJI9l/">在 Instagram 查看這則貼文</a></blockquote></div>
+      <div class="photo"><span class="ball">4</span><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CgvrW2kFC6M/?utm_source=ig_embed" data-instgrm-version="14"><a href="https://www.instagram.com/p/CgvrW2kFC6M/">在 Instagram 查看這則貼文</a></blockquote></div>
       <div class="info">
-        <h3>阿城號米粉</h3>
-        <p class="where">城隍廟內，中山路 75 號</p>
-        <p class="eat">炒米粉＋貢丸湯</p>
-        <p class="links"><a href="https://www.instagram.com/p/C3Jq9qNJI9l/">IG 熱門貼文 ♥ 693</a><a href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E7%AB%B9%E5%9F%8E%E9%9A%8D%E5%BB%9F%20%E9%98%BF%E5%9F%8E%E8%99%9F%E7%B1%B3%E7%B2%89" target="_blank" rel="noopener">地圖</a></p>
+        <h3>海瑞摃丸</h3>
+        <p class="where">北區西門街 98 號（總店）</p>
+        <p class="eat">Google 4.4 ★・1,686 則評論</p>
+        <p class="links"><a href="https://www.instagram.com/p/CgvrW2kFC6M/">IG 熱門貼文 ♥ 2,913</a><a href="https://www.google.com/maps/place/?q=place_id:ChIJ1-ChtNQ1aDQRdpyukPL0qz4" target="_blank" rel="noopener">Google 地圖</a></p>
       </div>
     </li>
     <li id="s5">
-      <div class="photo"><span class="ball">5</span><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cao6Pe_JQhJ/?utm_source=ig_embed" data-instgrm-version="14"><a href="https://www.instagram.com/p/Cao6Pe_JQhJ/">在 Instagram 查看這則貼文</a></blockquote></div>
+      <div class="photo"><span class="ball">5</span><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DajXj91kbuC/?utm_source=ig_embed" data-instgrm-version="14"><a href="https://www.instagram.com/p/DajXj91kbuC/">在 Instagram 查看這則貼文</a></blockquote></div>
       <div class="info">
-        <h3>柳家肉燥飯</h3>
-        <p class="where">城隍廟前廣場</p>
-        <p class="eat">炒米粉＋貢丸湯</p>
-        <p class="links"><a href="https://www.instagram.com/p/Cao6Pe_JQhJ/">IG 熱門貼文 ♥ 2,748</a><a href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E7%AB%B9%E5%9F%8E%E9%9A%8D%E5%BB%9F%20%E6%9F%B3%E5%AE%B6%E8%82%89%E7%87%A5%E9%A3%AF" target="_blank" rel="noopener">地圖</a></p>
+        <h3>新竹城隍廟第一家</h3>
+        <p class="where">北區中山路 77 號（城隍廟）</p>
+        <p class="eat">Google 4.5 ★・563 則評論</p>
+        <p class="links"><a href="https://www.instagram.com/p/DajXj91kbuC/">IG 熱門貼文 ♥ 8</a><a href="https://www.google.com/maps/place/?q=place_id:ChIJDZA-GsA1aDQRiDB_lJHEQQg" target="_blank" rel="noopener">Google 地圖</a></p>
       </div>
     </li>
     <li id="s6">
-      <div class="photo"><span class="ball">6</span><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cb9Duiilane/?utm_source=ig_embed" data-instgrm-version="14"><a href="https://www.instagram.com/p/Cb9Duiilane/">在 Instagram 查看這則貼文</a></blockquote></div>
+      <a class="photo empty" href="https://www.google.com/maps/place/?q=place_id:ChIJ151wVG02aDQRVcCzISgiztI" target="_blank" rel="noopener" aria-label="尚尚黃古早味小吃店 的 Google 地圖"><span class="ball">6</span><span class="nopost">IG 上還沒有<br>單獨介紹這家的貼文</span></a>
       <div class="info">
-        <h3>東門米粉攤<span class="mark">必比登</span></h3>
-        <p class="where">東門市場 1158 號</p>
-        <p class="eat">芋頭米粉湯</p>
-        <p class="links"><a href="https://www.instagram.com/p/Cb9Duiilane/">IG 熱門貼文 ♥ 1,999</a><a href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E7%AB%B9%20%E6%9D%B1%E9%96%80%E5%B8%82%E5%A0%B4%20%E6%9D%B1%E9%96%80%E7%B1%B3%E7%B2%89%E6%94%A4" target="_blank" rel="noopener">地圖</a></p>
+        <h3>尚尚黃古早味小吃店</h3>
+        <p class="where">北區民富街 148 號</p>
+        <p class="eat">Google 4.4 ★・645 則評論</p>
+        <p class="links"><a href="https://www.google.com/maps/place/?q=place_id:ChIJ151wVG02aDQRVcCzISgiztI" target="_blank" rel="noopener">Google 地圖</a></p>
       </div>
     </li>
   </ol>
@@ -225,7 +229,7 @@ dialog.ig .instagram-media{margin:0 auto!important;min-width:0!important;width:1
 
 <script>
 (function(){
-  var names=["一哥炊粉","石家魚丸","海瑞摃丸","阿城號","柳家","東門米粉"];
+  var names=["大同小吃","很南寮","梁小姐","海瑞摃丸","城隍廟第一家","尚尚黃"];
   var svg=document.getElementById('map'), path=document.getElementById('route'), g=document.getElementById('stops');
   var NS="http://www.w3.org/2000/svg", L;
   var pts=[[520,28],[505,120],[225,228],[470,348],[175,458],[445,578],[230,688],[110,742]];
