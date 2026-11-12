@@ -3,663 +3,95 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>新竹貢丸路跑｜一天連吃六家｜Foodie 拍攝企劃</title>
+<title>新竹貢丸路跑｜一天連吃六家</title>
 <meta name="description" content="不用跑步的路跑：一天連吃新竹六家貢丸米粉">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍢</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #fbf6ee; --ink: #2b2118; --muted: #7a6a5a; --card: #ffffff;
-  --brown: #8a5a2b; --brown-d: #5e3b1a; --cream: #f3e6d0; --accent: #d9622b; --line: #eadcc6;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--bg); color: var(--ink);
-  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif; line-height: 1.75; }
-.hero { background: radial-gradient(circle at 80% 20%, #b07a45 0, var(--brown) 40%, var(--brown-d) 100%);
-  color: #fff8ec; padding: 72px 20px 88px; text-align: center; position: relative; overflow: hidden; }
-.hero .balls { font-size: 56px; letter-spacing: 8px; animation: bounce 2.4s ease-in-out infinite; display: inline-block; }
-@keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-.hero h1 { font-size: clamp(32px, 6vw, 56px); margin: 12px 0 4px; letter-spacing: 2px; }
-.hero .en { opacity: .8; letter-spacing: 4px; text-transform: uppercase; font-size: 14px; }
-.hero .slogan { font-size: clamp(18px, 3vw, 24px); margin-top: 20px; font-weight: 700; }
-.hero .tag { display: inline-block; margin-top: 18px; padding: 4px 14px; border: 1px solid #ffffff66; border-radius: 999px; font-size: 13px; }
-.stats { max-width: 980px; margin: -48px auto 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 0 16px; position: relative; }
-.stat { background: var(--card); border-radius: 16px; padding: 18px; text-align: center; box-shadow: 0 6px 20px #5e3b1a1a; }
-.stat b { display: block; font-size: 26px; color: var(--accent); }
-.stat span { font-size: 13px; color: var(--muted); }
-nav.toc { max-width: 980px; margin: 28px auto 0; padding: 0 16px; display: flex; flex-wrap: wrap; gap: 8px; }
-nav.toc a { text-decoration: none; color: var(--brown-d); background: var(--cream); padding: 4px 12px; border-radius: 999px; font-size: 14px; }
-nav.toc a:hover { background: var(--accent); color: #fff; }
-main { max-width: 980px; margin: 24px auto 60px; padding: 0 16px; }
-.card { background: var(--card); border-radius: 20px; padding: 28px 32px; margin: 20px 0; box-shadow: 0 2px 10px #5e3b1a10; border: 1px solid var(--line); }
-.card h2 { margin-top: 0; color: var(--brown-d); font-size: 26px; border-left: 6px solid var(--accent); padding-left: 12px; }
-.card h3 { color: var(--brown); margin-top: 28px; }
-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; display: block; overflow-x: auto; }
-th, td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
-th { background: var(--cream); color: var(--brown-d); white-space: nowrap; }
-tr:hover td { background: #fdf8f0; }
-blockquote { margin: 14px 0; padding: 10px 16px; background: #fff4e8; border-left: 4px solid var(--accent); border-radius: 8px; color: var(--muted); }
-blockquote p { margin: 0; }
-pre { background: #2b2118; color: #f3e6d0; padding: 16px; border-radius: 12px; overflow-x: auto; font-size: 14px; }
-ul { padding-left: 22px; }
-.note { text-align: center; color: var(--muted); font-size: 14px; margin: 30px 0; }
-footer { text-align: center; color: var(--muted); font-size: 13px; padding: 30px; }
-@media (max-width: 640px) { .stats { grid-template-columns: repeat(2, 1fr); } .card { padding: 20px; } }
-@media print { .hero { padding: 30px; } nav.toc { display: none; } .card { box-shadow: none; break-inside: avoid; } }
+:root{--ink:#1c120b;--cream:#f6ecd9;--paper:#fffaf1;--red:#d8432a;--brown:#7a4a22;--gold:#e9b44c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cream);color:var(--ink);font-family:"Noto Sans TC",system-ui,sans-serif}
+
+/* ===== Cover ===== */
+.cover{min-height:100vh;min-height:100svh;background:var(--ink);color:var(--cream);position:relative;overflow:hidden;
+  display:grid;place-items:center;padding:48px 24px}
+.cover::before{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(-45deg,transparent 0 38px,#ffffff06 38px 76px)}
+.lanes{position:absolute;left:0;right:0;bottom:0;height:28%;
+  background:repeating-linear-gradient(to bottom,#b8462b 0 46px,#f6ecd9 46px 49px);opacity:.9;
+  transform:perspective(500px) rotateX(55deg);transform-origin:bottom}
+.inner{position:relative;text-align:center;z-index:2}
+.bib{display:inline-block;background:var(--paper);color:var(--ink);border-radius:10px;padding:10px 26px 6px;
+  box-shadow:0 10px 30px #0008;transform:rotate(-4deg);margin-bottom:28px;position:relative}
+.bib::before,.bib::after{content:"";position:absolute;top:8px;width:9px;height:9px;border-radius:50%;background:var(--ink)}
+.bib::before{left:9px}.bib::after{right:9px}
+.bib small{display:block;font-size:11px;letter-spacing:4px;color:var(--red);font-weight:700}
+.bib b{font-family:"Bebas Neue",sans-serif;font-size:64px;line-height:1;letter-spacing:2px}
+h1{font-weight:900;font-size:clamp(56px,13vw,150px);line-height:.95;letter-spacing:4px}
+h1 span{color:var(--gold)}
+.sub{margin-top:22px;font-size:clamp(18px,3.6vw,30px);font-weight:700;letter-spacing:6px}
+.sub em{font-style:normal;background:var(--red);padding:2px 12px;border-radius:6px}
+.balls{display:flex;justify-content:center;gap:clamp(8px,2vw,16px);margin-top:40px}
+.ball{width:clamp(34px,7vw,58px);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 32% 30%,#d9a46b 0 8%,#a8692f 30%,#6e3f17 75%,#4a280c);
+  box-shadow:inset -6px -8px 14px #0006,0 6px 12px #0007;animation:hop 1.6s ease-in-out infinite}
+.ball:nth-child(2){animation-delay:.12s}.ball:nth-child(3){animation-delay:.24s}
+.ball:nth-child(4){animation-delay:.36s}.ball:nth-child(5){animation-delay:.48s}.ball:nth-child(6){animation-delay:.6s}
+@keyframes hop{0%,100%{transform:translateY(0)}40%{transform:translateY(-18px)}}
+.scroll{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);z-index:2;color:var(--cream);
+  font-size:13px;letter-spacing:3px;opacity:.8;text-decoration:none}
+
+/* ===== Stops ===== */
+.stops{max-width:1080px;margin:0 auto;padding:72px 20px 40px}
+.stops h2{text-align:center;font-weight:900;font-size:clamp(28px,5vw,40px);letter-spacing:4px;margin-bottom:36px}
+.stops h2 span{color:var(--red)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.card{background:var(--paper);border-radius:18px;padding:22px 22px 20px;position:relative;
+  border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
+.no{font-family:"Bebas Neue",sans-serif;font-size:56px;line-height:1;color:var(--red)}
+.card h3{font-size:24px;font-weight:900;margin:4px 0 2px}
+.where{font-size:13px;color:var(--brown)}
+.eat{margin-top:14px;display:inline-block;background:var(--ink);color:var(--cream);font-size:14px;
+  padding:5px 12px;border-radius:999px}
+.tag{position:absolute;top:20px;right:18px;background:var(--gold);font-size:12px;font-weight:700;
+  padding:3px 10px;border-radius:999px}
+footer{text-align:center;padding:30px 20px 50px;font-size:13px;color:var(--brown)}
+.finish{display:inline-block;font-family:"Bebas Neue",sans-serif;font-size:28px;letter-spacing:6px;
+  color:var(--ink);border:3px solid var(--ink);padding:4px 22px;margin-bottom:14px;
+  background:repeating-linear-gradient(45deg,var(--paper) 0 10px,#eadfca 10px 20px)}
 </style>
 </head>
 <body>
-<header class="hero">
-  <div class="balls">🍢🏃‍♂️🍢</div>
-  <h1>新竹貢丸路跑</h1>
-  <div class="en">一天連吃六家 · Hsinchu Meatball Run</div>
-  <div class="slogan">不用跑步的路跑：從芎林吃回城隍廟，六碗貢丸米粉一路丸到底！</div>
-  <div class="tag">Foodie 美食影片拍攝企劃 v0.2</div>
-</header>
-<div class="stats">
-  <div class="stat"><b>6 家</b><span>貢丸米粉名店</span></div>
-  <div class="stat"><b>2 家</b><span>米其林必比登</span></div>
-  <div class="stat"><b>1 天</b><span>07:00 → 17:00</span></div>
-  <div class="stat"><b>0 公里</b><span>真的要跑的距離</span></div>
-</div>
-<nav class="toc"><a href="#1">1. 企劃概要</a><a href="#2">2. 影片概念</a><a href="#3">3. 六家店家名單</a><a href="#4">4. 拍攝路線與時間表</a><a href="#5">5. 每站拍攝腳本</a><a href="#6">6. 評分系統</a><a href="#7">7. 影片結構</a><a href="#8">8. 標題、縮圖與短影音</a><a href="#9">9. 道具與器材清單</a><a href="#10">10. 預算</a><a href="#11">11. 人員分工</a><a href="#12">12. 注意事項</a><a href="#13">13. 出發前確認清單</a></nav>
-<main>
-<section class="card"><h2 id="1">1. 企劃概要</h2>
-<table>
-<thead>
-<tr>
-<th>項目</th>
-<th>內容</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>企劃名稱</td>
-<td>新竹貢丸路跑 —— 一天連吃六家</td>
-</tr>
-<tr>
-<td>類型</td>
-<td>美食探店 Vlog（長片 + 短影音）</td>
-</tr>
-<tr>
-<td>主題</td>
-<td>新竹貢丸湯 × 米粉，一天吃六家名店</td>
-</tr>
-<tr>
-<td>「路跑」梗</td>
-<td>沒有真的跑。把吃六家當成一場「賽事」：有號碼布、有起點、有補給站（＝店家）、有完賽獎牌</td>
-</tr>
-<tr>
-<td>拍攝地點</td>
-<td>新竹縣芎林鄉 → 新竹市區（城隍廟、西門街、興學街、東門市場）</td>
-</tr>
-<tr>
-<td>拍攝時間</td>
-<td>一天（建議平日，避開假日排隊人潮）</td>
-</tr>
-<tr>
-<td>出鏡人數</td>
-<td>2～3 人</td>
-</tr>
-<tr>
-<td>成品</td>
-<td>YouTube 長片 15～20 分鐘 ×1、Reels / Shorts / TikTok 短片 ×6</td>
-</tr>
-</tbody>
-</table></section><section class="card"><h2 id="2">2. 影片概念</h2>
-<p>新竹三寶「米粉、貢丸、肉圓」大家都聽過，但<strong>到底哪一家的貢丸湯配米粉最好吃？</strong> 我們一天之內把六家名店吃一輪，從必比登推介、百年老店到排隊老攤，現場評分，最後選出冠軍。</p>
-<p><strong>「路跑」包裝：</strong>
-- 開場：別上號碼布、熱身操、鳴槍起跑（其實是走去開車 😂）
-- 每家店 = 一個「補給站」，畫面上跳出「第 X 站／剩下 X 站」
-- 計步器記錄一天走了幾步，跟吃下的貢丸數對比
-- 結尾：頒發自製「貢丸完賽獎牌」，公布「冠軍補給站」</p>
-<p><strong>觀眾得到什麼：</strong>
-- 一份可以直接照著走的新竹貢丸米粉一日路線
-- 每家店的特色、價格與真實評分
-- 輕鬆好笑的「吃到撐」挑戰感</p></section><section class="card"><h2 id="3">3. 六家店家名單</h2>
-<table>
-<thead>
-<tr>
-<th>#</th>
-<th>店家</th>
-<th>地點</th>
-<th>為什麼選它</th>
-<th>必點</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td><strong>一哥炊粉</strong></td>
-<td>新竹縣芎林鄉福昌街 621 號</td>
-<td>2026 米其林必比登新入選，40 年以上客家老店</td>
-<td>炊粉（乾炒 / 湯）、貢丸湯</td>
-</tr>
-<tr>
-<td>2</td>
-<td><strong>石家魚丸</strong></td>
-<td>新竹市東區興學街</td>
-<td>在地 80 年老店，手工丸、假日大排長龍</td>
-<td>貢丸湯、魚丸湯</td>
-</tr>
-<tr>
-<td>3</td>
-<td><strong>海瑞摃丸</strong>（西門街總店）</td>
-<td>新竹市北區西門街 98 號</td>
-<td>1948 年創立的貢丸老字號，口味多達 20 多種（和牛、松露…）</td>
-<td>原味摃丸、創意口味試吃</td>
-</tr>
-<tr>
-<td>4</td>
-<td><strong>阿城號米粉</strong></td>
-<td>新竹市北區中山路 75 號（城隍廟內）</td>
-<td>城隍廟 80 年以上老攤，手工米粉淋碎肉滷汁</td>
-<td>炒米粉、貢丸湯</td>
-</tr>
-<tr>
-<td>5</td>
-<td><strong>柳家肉燥飯</strong></td>
-<td>新竹城隍廟前廣場</td>
-<td>在地人「炒米粉 + 貢丸湯」的經典組合</td>
-<td>炒米粉、貢丸湯</td>
-</tr>
-<tr>
-<td>6</td>
-<td><strong>東門米粉攤</strong></td>
-<td>東門市場 1158 號</td>
-<td>新竹市米其林必比登推介，粗米粉 + 入口即化芋頭</td>
-<td>芋頭米粉湯</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_1">店家亮點（給旁白 / 字卡用）</h3>
-<p><strong>① 一哥炊粉｜必比登新貴</strong>
-- 「炊粉」是用在來米蒸（炊）出來的細米粉，跟一般新竹米粉做法不同，正好拿來開場講「新竹米粉不只一種」
-- 米其林評語提到貢丸湯有肉香和蘿蔔的清甜
-- 客家傳統早餐店 → 適合當<strong>第一站（早餐）</strong></p>
-<p><strong>② 石家魚丸｜80 年手工丸</strong>
-- 一邊是用餐區、一邊是丸子工廠，<strong>可以拍製丸過程</strong>（需先徵求同意）
-- 早上 8 點開賣</p>
-<p><strong>③ 海瑞摃丸｜貢丸的祖師爺</strong>
-- 1948 年從南門市場麵攤起家，據說新竹一半的貢丸業者都出自海瑞門下
-- 總店冰櫃有二十多種口味 → <strong>「怪口味貢丸挑戰」</strong>橋段
-- 以門市販售為主，拍攝前先確認現場能不能試吃 / 內用</p>
-<p><strong>④ 阿城號米粉｜城隍廟老字號</strong>
-- 米粉選用新竹南勢一帶的手工米粉
-- 城隍廟環境熱鬧，適合拍「廟口小吃」氛圍</p>
-<p><strong>⑤ 柳家肉燥飯｜在地人的青春回憶</strong>
-- 招牌其實是肉燥飯，但在地人都會配炒米粉 + 貢丸湯
-- 跟阿城號就在附近 → 可以做<strong>「城隍廟米粉 PK」</strong></p>
-<p><strong>⑥ 東門米粉攤｜壓軸必比登</strong>
-- 改用<strong>粗米粉</strong>，跟前面的細米粉形成對比
-- 芋頭燉到化開，可以加海鮮、餛飩、松阪豬
-- 東門市場文青風、燈光好，適合拍收尾
-- ⚠️ 座位少、賣完就收，要預留排隊時間</p></section><section class="card"><h2 id="4">4. 拍攝路線與時間表</h2>
-<pre><code>芎林 ──(開車約 25–30 分)──▶ 興學街 ──▶ 西門街 ──▶ 城隍廟（兩家）──▶ 東門市場
- ①一哥炊粉                  ②石家魚丸   ③海瑞摃丸   ④阿城號 ⑤柳家      ⑥東門米粉攤
-</code></pre>
-<blockquote>
-<p>市區四站都在新竹舊城區，車停好之後可以<strong>真的用走的</strong>（剛好呼應「路跑」梗，順便消化）。</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>時間</th>
-<th>站別</th>
-<th>內容</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>06:30</td>
-<td>集合</td>
-<td>器材檢查、換上號碼布</td>
-<td></td>
-</tr>
-<tr>
-<td>07:00</td>
-<td>🏁 起跑</td>
-<td>芎林拍開場（熱身操、鳴槍）</td>
-<td></td>
-</tr>
-<tr>
-<td>07:15</td>
-<td><strong>第 1 站</strong> 一哥炊粉</td>
-<td>早餐：炊粉 + 貢丸湯</td>
-<td>確認營業時間</td>
-</tr>
-<tr>
-<td>08:15</td>
-<td>移動</td>
-<td>開車回市區，車上拍「賽況報告」</td>
-<td></td>
-</tr>
-<tr>
-<td>09:00</td>
-<td><strong>第 2 站</strong> 石家魚丸</td>
-<td>貢丸湯，拍製丸過程</td>
-<td>平日人較少</td>
-</tr>
-<tr>
-<td>10:00</td>
-<td><strong>第 3 站</strong> 海瑞摃丸</td>
-<td>怪口味貢丸挑戰</td>
-<td>確認能否試吃</td>
-</tr>
-<tr>
-<td>10:45</td>
-<td>中場休息</td>
-<td>散步、拍街景、喝杯茶解膩</td>
-<td>讓胃休息</td>
-</tr>
-<tr>
-<td>11:30</td>
-<td><strong>第 4 站</strong> 阿城號米粉</td>
-<td>炒米粉 + 貢丸湯</td>
-<td>搶在午餐尖峰前</td>
-</tr>
-<tr>
-<td>12:15</td>
-<td><strong>第 5 站</strong> 柳家肉燥飯</td>
-<td>炒米粉 + 貢丸湯，城隍廟 PK</td>
-<td></td>
-</tr>
-<tr>
-<td>13:00</td>
-<td>撞牆期</td>
-<td>散步到東門市場，拍「撞牆」橋段</td>
-<td>休息至少 2 小時</td>
-</tr>
-<tr>
-<td>15:30</td>
-<td><strong>第 6 站</strong> 東門米粉攤</td>
-<td>芋頭米粉湯（壓軸）</td>
-<td>確認下午有沒有營業</td>
-</tr>
-<tr>
-<td>16:30</td>
-<td>🏅 終點</td>
-<td>頒獎、公布冠軍、結尾</td>
-<td></td>
-</tr>
-<tr>
-<td>17:00</td>
-<td>收工</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>⚠️ 所有營業時間都要在拍攝前一週重新確認。老店常有公休日或「賣完就收」。</p>
-</blockquote></section><section class="card"><h2 id="5">5. 每站拍攝腳本</h2>
-<p>每一站固定用同一套流程，剪輯時節奏會比較一致：</p>
-<table>
-<thead>
-<tr>
-<th>段落</th>
-<th>長度（成片）</th>
-<th>內容</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>① 進站</td>
-<td>10 秒</td>
-<td>字卡「第 X 站：店名」＋ 招牌空景 ＋ 「剩下 X 站」</td>
-</tr>
-<tr>
-<td>② 店家介紹</td>
-<td>15 秒</td>
-<td>旁白講歷史 / 亮點，配店面、菜單、老闆手部特寫</td>
-</tr>
-<tr>
-<td>③ 上菜</td>
-<td>10 秒</td>
-<td>慢動作：熱湯冒煙、夾起貢丸、米粉拉起來</td>
-</tr>
-<tr>
-<td>④ 第一口</td>
-<td>15 秒</td>
-<td>咬貢丸的聲音（收音要近）＋ 真實反應</td>
-</tr>
-<tr>
-<td>⑤ 評分</td>
-<td>20 秒</td>
-<td>每人舉牌打分（見第 6 節）</td>
-</tr>
-<tr>
-<td>⑥ 飽足度</td>
-<td>5 秒</td>
-<td>「胃容量進度條」動畫更新</td>
-</tr>
-<tr>
-<td>⑦ 一句話總結</td>
-<td>5 秒</td>
-<td>「這家適合 ___ 的人」</td>
-</tr>
-</tbody>
-</table>
-<p><strong>每站必拍 B-roll：</strong>
-- ☐ 店家招牌（正面 + 斜角）
-- ☐ 菜單 / 價目表
-- ☐ 料理過程（撈湯、炒米粉、灑芹菜）
-- ☐ 貢丸切開的剖面特寫（看肉的紋理）
-- ☐ 湯匙舀湯
-- ☐ 現場人潮 / 環境（避免拍到其他客人正臉）</p></section><section class="card"><h2 id="6">6. 評分系統</h2>
-<p>每人每站打分，滿分 10 分：</p>
-<table>
-<thead>
-<tr>
-<th>項目</th>
-<th>比重</th>
-<th>看什麼</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>🍢 貢丸 Q 彈度</td>
-<td>30%</td>
-<td>彈性、脆度、肉汁、肉味</td>
-</tr>
-<tr>
-<td>🥣 湯頭</td>
-<td>20%</td>
-<td>清甜度、鹹度、有沒有喝完的衝動</td>
-</tr>
-<tr>
-<td>🍜 米粉</td>
-<td>30%</td>
-<td>口感、香氣、醬汁 / 湯的搭配</td>
-</tr>
-<tr>
-<td>💰 CP 值</td>
-<td>10%</td>
-<td>價格與份量</td>
-</tr>
-<tr>
-<td>🔁 回訪指數</td>
-<td>10%</td>
-<td>「會不會專程再來？」</td>
-</tr>
-</tbody>
-</table>
-<p><strong>特別獎（結尾頒發）：</strong>
-- 🏆 總冠軍補給站
-- 💪 最 Q 彈貢丸獎
-- 🍜 最佳米粉獎
-- 🤯 最意外獎（例如：海瑞的怪口味）
-- 😵 撞牆獎（吃到哪一站最痛苦）</p>
-<blockquote>
-<p>評分完全以出鏡者個人口味為準，影片中說明「純屬個人主觀」，避免引起店家誤會。</p>
-</blockquote></section><section class="card"><h2 id="7">7. 影片結構</h2>
-<p><strong>YouTube 長片（目標 15～20 分鐘）</strong></p>
-<table>
-<thead>
-<tr>
-<th>時間軸</th>
-<th>段落</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0:00–0:30</td>
-<td><strong>Hook</strong>：先放最誇張的畫面（撞牆、怪口味貢丸）＋「今天要一天吃六家！」</td>
-</tr>
-<tr>
-<td>0:30–1:30</td>
-<td><strong>開場</strong>：號碼布、熱身操、說明規則與評分方式</td>
-</tr>
-<tr>
-<td>1:30–3:30</td>
-<td>第 1 站 一哥炊粉</td>
-</tr>
-<tr>
-<td>3:30–5:30</td>
-<td>第 2 站 石家魚丸</td>
-</tr>
-<tr>
-<td>5:30–8:00</td>
-<td>第 3 站 海瑞摃丸（怪口味挑戰，可以拉長）</td>
-</tr>
-<tr>
-<td>8:00–8:30</td>
-<td>中場：散步、計步器、胃容量進度條</td>
-</tr>
-<tr>
-<td>8:30–10:30</td>
-<td>第 4 站 阿城號米粉</td>
-</tr>
-<tr>
-<td>10:30–12:30</td>
-<td>第 5 站 柳家肉燥飯 ＋ 城隍廟 PK</td>
-</tr>
-<tr>
-<td>12:30–13:30</td>
-<td>撞牆期（搞笑段落）</td>
-</tr>
-<tr>
-<td>13:30–15:30</td>
-<td>第 6 站 東門米粉攤</td>
-</tr>
-<tr>
-<td>15:30–17:30</td>
-<td><strong>終點</strong>：頒發獎牌、總排名、冠軍揭曉</td>
-</tr>
-<tr>
-<td>17:30–18:00</td>
-<td>結尾：一日路線地圖總整理、請觀眾留言推薦下一個城市</td>
-</tr>
-</tbody>
-</table></section><section class="card"><h2 id="8">8. 標題、縮圖與短影音</h2>
-<h3 id="_2">標題候選</h3>
-<ol>
-<li>新竹貢丸路跑🏃 一天連吃六家貢丸米粉，冠軍竟然是…</li>
-<li>一天吃六家新竹貢丸！必比登 vs 80 年老店，哪家最 Q？</li>
-<li>新竹人吵翻天的貢丸米粉排名｜六家一次吃完</li>
-<li>不用跑步的路跑：新竹六家貢丸米粉吃到撐 🍢</li>
-</ol>
-<h3 id="_3">縮圖構想</h3>
-<ul>
-<li>出鏡者別著號碼布，雙手各拿一串貢丸，表情「撐爆」</li>
-<li>背景六碗貢丸湯排成一排，標上 1～6</li>
-<li>大字：「一天吃 6 家！」＋「冠軍是？」</li>
-</ul>
-<h3 id="3060">短影音（每家一支，30～60 秒）</h3>
-<ul>
-<li>「新竹必比登炊粉，早餐就吃這個」</li>
-<li>「和牛貢丸、松露貢丸，新竹貢丸祖師爺的怪口味」</li>
-<li>「城隍廟兩家炒米粉 PK，你站哪邊？」</li>
-<li>「新竹最強芋頭米粉湯」</li>
-<li>「80 年手工貢丸怎麼做？」</li>
-<li>「一天吃六家貢丸的下場…」（撞牆合集）</li>
-</ul>
-<h3 id="hashtag">Hashtag</h3>
-<p><code>#新竹美食</code> <code>#新竹貢丸</code> <code>#新竹米粉</code> <code>#城隍廟美食</code> <code>#必比登</code> <code>#東門市場</code> <code>#貢丸路跑</code></p></section><section class="card"><h2 id="9">9. 道具與器材清單</h2>
-<h3 id="_4">🎒 道具（路跑梗）</h3>
-<ul>
-<li>☐ 自製號碼布（印「貢丸路跑」＋ 每個人的編號）</li>
-<li>☐ 自製貢丸完賽獎牌（可以用保麗龍球 + 金色噴漆）</li>
-<li>☐ 評分牌（0～10 分，或白板 + 白板筆）</li>
-<li>☐ 計步器 / 手機計步 App</li>
-<li>☐ 小旗子或起跑槍音效</li>
-<li>☐ 「補給站」字卡</li>
-</ul>
-<h3 id="_5">🎥 器材</h3>
-<ul>
-<li>☐ 主攝影機 / 手機 ×2（一台拍人、一台拍食物）</li>
-<li>☐ 無線麥克風 ×2（店內吵，一定要有）</li>
-<li>☐ 小型補光燈（老店光線通常偏暗）</li>
-<li>☐ 穩定器</li>
-<li>☐ 行動電源、備用電池、記憶卡</li>
-<li>☐ 運動相機（車上 / 走路畫面）</li>
-</ul>
-<h3 id="_6">🧻 生活用品</h3>
-<ul>
-<li>☐ 濕紙巾、面紙</li>
-<li>☐ 腸胃藥、消化藥</li>
-<li>☐ 溫水 / 無糖茶</li>
-<li>☐ 外帶盒（吃不完打包，不浪費）</li>
-<li>☐ 現金（老店多半只收現金）</li>
-</ul></section><section class="card"><h2 id="10">10. 預算</h2>
-<table>
-<thead>
-<tr>
-<th>項目</th>
-<th>估算（元）</th>
-<th>備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>餐費</td>
-<td>1,200～1,800</td>
-<td>6 站 × 2～3 人；採「點一份大家分」</td>
-</tr>
-<tr>
-<td>海瑞試吃 / 伴手禮</td>
-<td>300～500</td>
-<td>怪口味貢丸</td>
-</tr>
-<tr>
-<td>交通（油錢、停車）</td>
-<td>300～500</td>
-<td>芎林來回 + 市區停車</td>
-</tr>
-<tr>
-<td>道具製作</td>
-<td>300～500</td>
-<td>號碼布、獎牌、評分牌</td>
-</tr>
-<tr>
-<td>雜支</td>
-<td>200</td>
-<td>飲料、濕紙巾、藥</td>
-</tr>
-<tr>
-<td><strong>合計</strong></td>
-<td><strong>約 2,300～3,500</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table></section><section class="card"><h2 id="11">11. 人員分工</h2>
-<table>
-<thead>
-<tr>
-<th>角色</th>
-<th>人數</th>
-<th>工作</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>主持 / 出鏡（Foodie 本人）</td>
-<td>1</td>
-<td>吃、評分、主持</td>
-</tr>
-<tr>
-<td>出鏡搭檔</td>
-<td>1</td>
-<td>吐槽、對比評分、撞牆擔當</td>
-</tr>
-<tr>
-<td>攝影</td>
-<td>1</td>
-<td>主鏡頭 + 食物特寫</td>
-</tr>
-<tr>
-<td>（選配）助理</td>
-<td>1</td>
-<td>收音、補光、記錄時間與評分、處理點餐</td>
-</tr>
-</tbody>
-</table></section><section class="card"><h2 id="12">12. 注意事項</h2>
-<h3 id="_7">🤝 店家禮儀</h3>
-<ul>
-<li>拍攝前<strong>先跟老闆打招呼、徵求同意</strong>，說明是 YouTube / 社群美食影片</li>
-<li>避開尖峰時段，不要佔用座位太久，拍完就讓位</li>
-<li>不要擋到動線或廚房</li>
-<li>拍製作過程（石家、海瑞）<strong>一定要事先問</strong></li>
-<li>不拍其他客人的正臉，如果拍到後製要打馬賽克</li>
-<li>評分以個人口味為主，避免使用貶低店家的字眼</li>
-</ul>
-<h3 id="_8">🍽️ 吃的策略</h3>
-<ul>
-<li>六家吃下來份量很可觀：<strong>每站點一份大家分</strong>，主持人吃到「能評分」就好</li>
-<li>前面幾站少喝湯，留胃給後面</li>
-<li>中場安排散步休息，城隍廟到東門市場之間至少休息 2 小時</li>
-<li>吃不完打包帶走，不要浪費食物</li>
-</ul>
-<h3 id="_9">🎬 拍攝</h3>
-<ul>
-<li>老店燈光暗、湯會起霧 → 補光燈打側邊，鏡頭別對著蒸氣</li>
-<li>店內吵 → 無線麥克風要夾近，關鍵台詞可以拍完後在店外補錄</li>
-<li>每站拍完立刻記下評分和印象，晚上剪輯才不會忘</li>
-</ul></section><section class="card"><h2 id="13">13. 出發前確認清單</h2>
-<ul>
-<li>☐ 六家店的<strong>營業時間與公休日</strong>（老店時間常變，建議打電話或看店家最新臉書 / Google 地圖）</li>
-<li>☐ 東門米粉攤下午有沒有營業、大約幾點賣完</li>
-<li>☐ 海瑞西門街總店能不能內用或試吃</li>
-<li>☐ 石家魚丸能不能拍製丸過程</li>
-<li>☐ 天氣（新竹風大，戶外開場拍攝注意收音）</li>
-<li>☐ 停車地點（城隍廟周邊有收費停車場）</li>
-<li>☐ 道具製作完成</li>
-<li>☐ 器材充電、記憶卡清空</li>
-</ul>
-<h3 id="_10">店家聯絡資訊</h3>
-<table>
-<thead>
-<tr>
-<th>店家</th>
-<th>電話</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>一哥炊粉</td>
-<td>03-592-5635</td>
-</tr>
-<tr>
-<td>石家魚丸</td>
-<td>（待查）</td>
-</tr>
-<tr>
-<td>海瑞摃丸 西門街總店</td>
-<td>03-526-1115</td>
-</tr>
-<tr>
-<td>阿城號米粉</td>
-<td>03-528-4517</td>
-</tr>
-<tr>
-<td>柳家肉燥飯</td>
-<td>03-526-7990</td>
-</tr>
-<tr>
-<td>東門米粉攤</td>
-<td>0908-569-816</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>電話與地址整理自網路報導，可能有變動，出發前請再確認。</p>
-</blockquote>
 
-<h3 id="_11">資料來源</h3>
-<ul>
-<li><a target="_blank" href="https://supertaste.tvbs.com.tw/food/360520">食尚玩家：2026 新竹米其林必比登完整名單（一哥炊粉、東門米粉攤）</a></li>
-<li><a target="_blank" href="https://supertaste.tvbs.com.tw/esg/343935">食尚玩家：一哥炊粉店家資訊</a></li>
-<li><a target="_blank" href="https://www.cw.com.tw/article/5122528">天下雜誌：海瑞摃丸第三代與 27 種口味</a></li>
-<li><a target="_blank" href="https://supertaste.tvbs.com.tw/food/320487">食尚玩家：海瑞摃丸西門街總店資訊</a></li>
-<li><a target="_blank" href="https://smiletaiwan.cw.com.tw/article/1014">Smile Taiwan：阿城號米粉、城隍廟小吃</a></li>
-<li><a target="_blank" href="https://supertaste.tvbs.com.tw/food/308611">食尚玩家：柳家肉燥飯、城隍廟小吃</a></li>
-<li><a target="_blank" href="https://travel.yam.com/article/130786">蕃薯藤旅遊：東門米粉攤攤位資訊</a></li>
-<li><a target="_blank" href="https://appletrees.tw/blog/post/shijiayuwan">Darren 蘋果樹：石家魚丸 80 年老店</a></li>
-</ul>
+<section class="cover">
+  <div class="lanes"></div>
+  <div class="inner">
+    <div class="bib"><small>HSINCHU MEATBALL RUN</small><b>No. 06</b></div>
+    <h1>新竹<span>貢丸</span><br>路跑</h1>
+    <p class="sub">一天連吃 <em>六家</em></p>
+    <div class="balls"><i class="ball"></i><i class="ball"></i><i class="ball"></i><i class="ball"></i><i class="ball"></i><i class="ball"></i></div>
+  </div>
+  <a class="scroll" href="#stops">▼ 補給站</a>
+</section>
 
-<p><em>本企劃為拍攝草案，店家營業資訊以出發前確認為準。</em></p></section>
-</main>
-<footer>🍢 Foodie 新竹貢丸路跑 · 拍攝企劃草案，店家資訊以出發前確認為準</footer>
+<section class="stops" id="stops">
+  <h2>六個<span>補給站</span></h2>
+  <div class="grid">
+    <div class="card"><span class="tag">必比登</span><div class="no">01</div><h3>一哥炊粉</h3><div class="where">芎林・福昌街 621 號</div><span class="eat">炊粉 ＋ 貢丸湯</span></div>
+    <div class="card"><span class="tag">80 年</span><div class="no">02</div><h3>石家魚丸</h3><div class="where">東區・興學街</div><span class="eat">手工貢丸湯</span></div>
+    <div class="card"><span class="tag">1948</span><div class="no">03</div><h3>海瑞摃丸</h3><div class="where">北區・西門街 98 號</div><span class="eat">原味 ＋ 怪口味貢丸</span></div>
+    <div class="card"><span class="tag">城隍廟</span><div class="no">04</div><h3>阿城號米粉</h3><div class="where">城隍廟內・中山路 75 號</div><span class="eat">炒米粉 ＋ 貢丸湯</span></div>
+    <div class="card"><span class="tag">城隍廟</span><div class="no">05</div><h3>柳家肉燥飯</h3><div class="where">城隍廟前廣場</div><span class="eat">炒米粉 ＋ 貢丸湯</span></div>
+    <div class="card"><span class="tag">必比登</span><div class="no">06</div><h3>東門米粉攤</h3><div class="where">東門市場 1158 號</div><span class="eat">芋頭米粉湯</span></div>
+  </div>
+</section>
+
+<footer>
+  <div class="finish">FINISH</div><br>
+  🍢 Foodie 拍攝企劃・店家營業時間請出發前確認
+</footer>
+
 </body>
 </html>
