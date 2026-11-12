@@ -5,93 +5,185 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>新竹貢丸路跑｜一天連吃六家</title>
 <meta name="description" content="不用跑步的路跑：一天連吃新竹六家貢丸米粉">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍢</text></svg>">
+<meta property="og:title" content="新竹貢丸路跑｜一天連吃六家">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%235a3418'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;900&family=Archivo:wdth,wght@62..125,500;62..125,800&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#1c120b;--cream:#f6ecd9;--paper:#fffaf1;--red:#d8432a;--brown:#7a4a22;--gold:#e9b44c}
+:root{
+  --broth:#f2bf3f;   /* 湯頭 */
+  --meat:#55301a;    /* 貢丸 */
+  --celery:#1f7a4a;  /* 芹菜 */
+  --noodle:#fbf6e8;  /* 米粉 */
+  --chili:#d8452b;   /* 辣醬 */
+}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--cream);color:var(--ink);font-family:"Noto Sans TC",system-ui,sans-serif}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--noodle);color:var(--meat);font-family:"Noto Serif TC",serif;}
+.lat{font-family:"Archivo",sans-serif}
 
-/* ===== Cover ===== */
-.cover{min-height:100vh;min-height:100svh;background:var(--ink);color:var(--cream);position:relative;overflow:hidden;
-  display:grid;place-items:center;padding:48px 24px}
-.cover::before{content:"";position:absolute;inset:0;
-  background:repeating-linear-gradient(-45deg,transparent 0 38px,#ffffff06 38px 76px)}
-.lanes{position:absolute;left:0;right:0;bottom:0;height:28%;
-  background:repeating-linear-gradient(to bottom,#b8462b 0 46px,#f6ecd9 46px 49px);opacity:.9;
-  transform:perspective(500px) rotateX(55deg);transform-origin:bottom}
-.inner{position:relative;text-align:center;z-index:2}
-.bib{display:inline-block;background:var(--paper);color:var(--ink);border-radius:10px;padding:10px 26px 6px;
-  box-shadow:0 10px 30px #0008;transform:rotate(-4deg);margin-bottom:28px;position:relative}
-.bib::before,.bib::after{content:"";position:absolute;top:8px;width:9px;height:9px;border-radius:50%;background:var(--ink)}
-.bib::before{left:9px}.bib::after{right:9px}
-.bib small{display:block;font-size:11px;letter-spacing:4px;color:var(--red);font-weight:700}
-.bib b{font-family:"Bebas Neue",sans-serif;font-size:64px;line-height:1;letter-spacing:2px}
-h1{font-weight:900;font-size:clamp(56px,13vw,150px);line-height:.95;letter-spacing:4px}
-h1 span{color:var(--gold)}
-.sub{margin-top:22px;font-size:clamp(18px,3.6vw,30px);font-weight:700;letter-spacing:6px}
-.sub em{font-style:normal;background:var(--red);padding:2px 12px;border-radius:6px}
-.balls{display:flex;justify-content:center;gap:clamp(8px,2vw,16px);margin-top:40px}
-.ball{width:clamp(34px,7vw,58px);aspect-ratio:1;border-radius:50%;
-  background:radial-gradient(circle at 32% 30%,#d9a46b 0 8%,#a8692f 30%,#6e3f17 75%,#4a280c);
-  box-shadow:inset -6px -8px 14px #0006,0 6px 12px #0007;animation:hop 1.6s ease-in-out infinite}
-.ball:nth-child(2){animation-delay:.12s}.ball:nth-child(3){animation-delay:.24s}
-.ball:nth-child(4){animation-delay:.36s}.ball:nth-child(5){animation-delay:.48s}.ball:nth-child(6){animation-delay:.6s}
-@keyframes hop{0%,100%{transform:translateY(0)}40%{transform:translateY(-18px)}}
-.scroll{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);z-index:2;color:var(--cream);
-  font-size:13px;letter-spacing:3px;opacity:.8;text-decoration:none}
+/* ---------- Cover ---------- */
+.cover{position:relative;min-height:100vh;min-height:100svh;background:var(--broth);overflow:hidden;
+  display:grid;grid-template-columns:auto minmax(0,1fr);align-items:stretch;
+  padding:clamp(20px,4vw,56px)}
+/* rice-noodle texture */
+.noodles{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.4}
+/* riso grain */
+.grain{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:.35}
 
-/* ===== Stops ===== */
-.stops{max-width:1080px;margin:0 auto;padding:72px 20px 40px}
-.stops h2{text-align:center;font-weight:900;font-size:clamp(28px,5vw,40px);letter-spacing:4px;margin-bottom:36px}
-.stops h2 span{color:var(--red)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
-.card{background:var(--paper);border-radius:18px;padding:22px 22px 20px;position:relative;
-  border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink);transition:transform .15s,box-shadow .15s}
-.card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
-.no{font-family:"Bebas Neue",sans-serif;font-size:56px;line-height:1;color:var(--red)}
-.card h3{font-size:24px;font-weight:900;margin:4px 0 2px}
-.where{font-size:13px;color:var(--brown)}
-.eat{margin-top:14px;display:inline-block;background:var(--ink);color:var(--cream);font-size:14px;
-  padding:5px 12px;border-radius:999px}
-.tag{position:absolute;top:20px;right:18px;background:var(--gold);font-size:12px;font-weight:700;
-  padding:3px 10px;border-radius:999px}
-footer{text-align:center;padding:30px 20px 50px;font-size:13px;color:var(--brown)}
-.finish{display:inline-block;font-family:"Bebas Neue",sans-serif;font-size:28px;letter-spacing:6px;
-  color:var(--ink);border:3px solid var(--ink);padding:4px 22px;margin-bottom:14px;
-  background:repeating-linear-gradient(45deg,var(--paper) 0 10px,#eadfca 10px 20px)}
+.title{position:relative;z-index:2;display:flex;gap:clamp(10px,2vw,26px);align-items:flex-start}
+.title h1{writing-mode:vertical-rl;font-weight:900;font-size:clamp(70px,calc((100svh - 90px) / 6.1),170px);line-height:1;
+  letter-spacing:.02em;color:var(--meat)}
+.title h1 .run{margin-top:.08em;color:var(--noodle);-webkit-text-stroke:0;text-shadow:
+  3px 3px 0 var(--meat),-1px -1px 0 var(--meat),1px -1px 0 var(--meat),-1px 1px 0 var(--meat),1px 1px 0 var(--meat)}
+.title .side{writing-mode:vertical-rl;font-weight:500;font-size:clamp(16px,2.4vh,22px);letter-spacing:.5em;
+  padding-top:.4em;color:var(--meat)}
+.title .side b{font-weight:900;color:var(--chili)}
+
+.course{position:relative;z-index:2;align-self:center;width:100%;max-height:92svh}
+.course svg{width:100%;height:auto;max-height:92svh;display:block;overflow:visible;margin:0 auto}
+.road{fill:none;stroke:var(--meat);stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
+.lane{fill:none;stroke:var(--broth);stroke-width:3;stroke-dasharray:14 12;stroke-linecap:round}
+.lbl-n{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:125%;font-size:17px;fill:var(--chili)}
+.lbl-s{font-family:"Noto Serif TC",serif;font-weight:900;font-size:28px;fill:var(--meat)}
+.flag text{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:62%;font-size:20px;letter-spacing:.06em}
+
+.bib{position:absolute;z-index:3;right:clamp(20px,4vw,56px);bottom:clamp(20px,4vw,48px);
+  background:var(--noodle);padding:10px 18px 8px;transform:rotate(3deg);
+  box-shadow:4px 4px 0 var(--meat);border:2px solid var(--meat);text-align:center}
+.bib .k{font-family:"Archivo",sans-serif;font-stretch:125%;font-weight:800;font-size:34px;line-height:1;color:var(--meat)}
+.bib .k span{color:var(--chili)}
+.bib .t{font-size:13px;letter-spacing:.2em;margin-top:4px}
+
+/* draw-on motion */
+.anim .road,.anim .lane{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:draw 1.6s cubic-bezier(.6,0,.2,1) .2s forwards}
+.anim .lane{stroke-dasharray:14 12;stroke-dashoffset:0;opacity:0;animation:fade .4s 1.7s forwards}
+.anim .stop{opacity:0;transform-box:fill-box;transform-origin:center;animation:drop .5s cubic-bezier(.3,1.6,.5,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+@keyframes drop{from{opacity:0;transform:translateY(-30px) scale(.6)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.anim .road,.anim .lane,.anim .stop{animation:none;opacity:1;stroke-dashoffset:0;transform:none}}
+
+/* ---------- Stops ---------- */
+.list{max-width:880px;margin:0 auto;padding:clamp(56px,9vw,110px) 24px 40px}
+.list h2{font-weight:900;font-size:clamp(30px,5vw,46px);line-height:1.2;margin-bottom:8px}
+.list .lede{font-size:17px;line-height:1.8;margin-bottom:36px;max-width:34em}
+ol{list-style:none;border-top:3px solid var(--meat)}
+li{display:grid;grid-template-columns:64px 1fr auto;gap:4px 20px;align-items:center;
+  padding:22px 0;border-bottom:1px solid #55301a40}
+li .ball{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle at 34% 30%,#9a6338,#55301a 70%);color:var(--noodle);
+  font-family:"Archivo",sans-serif;font-weight:800;font-size:18px}
+li h3{font-weight:900;font-size:clamp(22px,3.4vw,30px);line-height:1.2}
+li .where{grid-column:2;font-size:15px;opacity:.75}
+li .eat{grid-row:1/3;grid-column:3;font-size:16px;font-weight:500;color:var(--celery);text-align:right;white-space:nowrap}
+li .mark{display:inline-block;vertical-align:middle;margin-left:10px;font-size:13px;font-weight:500;
+  color:var(--chili);border:1.5px solid var(--chili);border-radius:3px;padding:0 6px;line-height:1.6}
+footer{text-align:center;padding:24px 24px 60px;font-size:14px;opacity:.7}
+
+/* ---------- Mobile ---------- */
+@media (max-width:760px){
+  .bib{transform:rotate(3deg) scale(.8);transform-origin:bottom right}
+  .cover{grid-template-columns:1fr;grid-template-rows:auto auto;gap:20px;padding-bottom:120px;min-height:0}
+  .title{flex-direction:row-reverse;justify-content:flex-end}
+  .title h1{writing-mode:horizontal-tb;font-size:clamp(46px,14vw,72px);line-height:1.05}
+  .title .side{display:none}
+  .course svg{max-height:none;margin:0 auto}
+  li{grid-template-columns:52px 1fr;gap:2px 14px}
+  li .ball{width:44px;height:44px;font-size:16px;grid-row:1/4}
+  li .eat{grid-row:auto;grid-column:2;text-align:left;white-space:normal}
+}
 </style>
 </head>
 <body>
 
-<section class="cover">
-  <div class="lanes"></div>
-  <div class="inner">
-    <div class="bib"><small>HSINCHU MEATBALL RUN</small><b>No. 06</b></div>
-    <h1>新竹<span>貢丸</span><br>路跑</h1>
-    <p class="sub">一天連吃 <em>六家</em></p>
-    <div class="balls"><i class="ball"></i><i class="ball"></i><i class="ball"></i><i class="ball"></i><i class="ball"></i><i class="ball"></i></div>
+<header class="cover">
+  <svg class="noodles" aria-hidden="true"><defs>
+    <pattern id="nd" width="220" height="120" patternUnits="userSpaceOnUse" patternTransform="rotate(-8)">
+      <path d="M0 20 q27 -14 55 0 t55 0 t55 0 t55 0" fill="none" stroke="#fff8e4" stroke-width="2"/>
+      <path d="M-30 52 q27 -12 55 0 t55 0 t55 0 t55 0 t55 0" fill="none" stroke="#fff8e4" stroke-width="1.5"/>
+      <path d="M0 88 q27 -16 55 0 t55 0 t55 0 t55 0" fill="none" stroke="#fff8e4" stroke-width="2"/>
+    </pattern></defs><rect width="100%" height="100%" fill="url(#nd)"/></svg>
+  <svg class="grain" aria-hidden="true" width="100%" height="100%"><filter id="gr"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .33  0 0 0 0 .19  0 0 0 0 .1  0 0 0 .55 0"/></filter><rect width="100%" height="100%" filter="url(#gr)"/></svg>
+
+  <div class="title">
+    <h1>新竹貢丸<span class="run">路跑</span></h1>
+    <p class="side">一天連吃<b>六</b>家　不用跑步</p>
   </div>
-  <a class="scroll" href="#stops">▼ 補給站</a>
-</section>
 
-<section class="stops" id="stops">
-  <h2>六個<span>補給站</span></h2>
-  <div class="grid">
-    <div class="card"><span class="tag">必比登</span><div class="no">01</div><h3>一哥炊粉</h3><div class="where">芎林・福昌街 621 號</div><span class="eat">炊粉 ＋ 貢丸湯</span></div>
-    <div class="card"><span class="tag">80 年</span><div class="no">02</div><h3>石家魚丸</h3><div class="where">東區・興學街</div><span class="eat">手工貢丸湯</span></div>
-    <div class="card"><span class="tag">1948</span><div class="no">03</div><h3>海瑞摃丸</h3><div class="where">北區・西門街 98 號</div><span class="eat">原味 ＋ 怪口味貢丸</span></div>
-    <div class="card"><span class="tag">城隍廟</span><div class="no">04</div><h3>阿城號米粉</h3><div class="where">城隍廟內・中山路 75 號</div><span class="eat">炒米粉 ＋ 貢丸湯</span></div>
-    <div class="card"><span class="tag">城隍廟</span><div class="no">05</div><h3>柳家肉燥飯</h3><div class="where">城隍廟前廣場</div><span class="eat">炒米粉 ＋ 貢丸湯</span></div>
-    <div class="card"><span class="tag">必比登</span><div class="no">06</div><h3>東門米粉攤</h3><div class="where">東門市場 1158 號</div><span class="eat">芋頭米粉湯</span></div>
+  <div class="course">
+    <svg id="map" viewBox="0 0 640 760" role="img" aria-label="從芎林一哥炊粉到東門米粉攤的六站吃貨路線">
+      <defs>
+        <radialGradient id="mb" cx="34%" cy="30%" r="75%">
+          <stop offset="0" stop-color="#b07848"/><stop offset=".45" stop-color="#7a4726"/><stop offset="1" stop-color="#3f220f"/>
+        </radialGradient>
+      </defs>
+      <path id="route" class="road" d=""/>
+      <path id="lane" class="lane" d=""/>
+      <g class="flag" transform="translate(520 28)">
+        <rect x="-34" y="-46" width="68" height="28" fill="var(--celery)"/>
+        <text x="0" y="-25" text-anchor="middle" fill="var(--noodle)">START</text>
+      </g>
+      <g class="flag" transform="translate(110 742)">
+        <rect x="-90" y="-14" width="76" height="28" fill="var(--chili)"/>
+        <text x="-52" y="7" text-anchor="middle" fill="var(--noodle)">FINISH</text>
+      </g>
+      <g id="stops"></g>
+    </svg>
   </div>
-</section>
 
-<footer>
-  <div class="finish">FINISH</div><br>
-  🍢 Foodie 拍攝企劃・店家營業時間請出發前確認
-</footer>
+  <div class="bib" aria-hidden="true"><div class="k lat">0<span>.</span>0 KM</div><div class="t">吃六碗・跑零公里</div></div>
+</header>
 
+<main class="list">
+  <h2>六個補給站</h2>
+  <p class="lede">從芎林一路吃回新竹舊城，照這個順序走，早餐吃到晚餐。</p>
+  <ol>
+    <li><span class="ball">1</span><h3>一哥炊粉<span class="mark">必比登</span></h3><span class="where">芎林鄉福昌街 621 號</span><span class="eat">炊粉＋貢丸湯</span></li>
+    <li><span class="ball">2</span><h3>石家魚丸</h3><span class="where">東區興學街，80 年老店</span><span class="eat">手工貢丸湯</span></li>
+    <li><span class="ball">3</span><h3>海瑞摃丸</h3><span class="where">北區西門街 98 號，1948 年創立</span><span class="eat">原味＋怪口味貢丸</span></li>
+    <li><span class="ball">4</span><h3>阿城號米粉</h3><span class="where">城隍廟內，中山路 75 號</span><span class="eat">炒米粉＋貢丸湯</span></li>
+    <li><span class="ball">5</span><h3>柳家肉燥飯</h3><span class="where">城隍廟前廣場</span><span class="eat">炒米粉＋貢丸湯</span></li>
+    <li><span class="ball">6</span><h3>東門米粉攤<span class="mark">必比登</span></h3><span class="where">東門市場 1158 號</span><span class="eat">芋頭米粉湯</span></li>
+  </ol>
+</main>
+<footer>店家營業時間常有變動，出發前請先確認。</footer>
+
+<script>
+(function(){
+  var names=["一哥炊粉","石家魚丸","海瑞摃丸","阿城號","柳家","東門米粉"];
+  var svg=document.getElementById('map'), path=document.getElementById('route'), g=document.getElementById('stops');
+  var NS="http://www.w3.org/2000/svg", L;
+  var pts=[[520,28],[505,120],[225,228],[470,348],[175,458],[445,578],[230,688],[110,742]];
+  var stops=[1,2,3,4,5,6];
+  // Catmull-Rom -> cubic bezier
+  var d='M'+pts[0][0]+' '+pts[0][1];
+  for(var i=0;i<pts.length-1;i++){
+    var p0=pts[i-1]||pts[i],p1=pts[i],p2=pts[i+1],p3=pts[i+2]||p2;
+    d+=' C'+(p1[0]+(p2[0]-p0[0])/6)+' '+(p1[1]+(p2[1]-p0[1])/6)+','+(p2[0]-(p3[0]-p1[0])/6)+' '+(p2[1]-(p3[1]-p1[1])/6)+','+p2[0]+' '+p2[1];
+  }
+  path.setAttribute('d',d); document.getElementById('lane').setAttribute('d',d);
+  L=path.getTotalLength();
+  stops.forEach(function(k,i){
+    var p={x:pts[k][0],y:pts[k][1]}, right=[1,0,1,0,1,1][i];
+    var s=el('g',{'class':'stop'}); s.style.animationDelay=(0.45+i*0.22)+'s';
+    s.appendChild(el('circle',{cx:p.x+3,cy:p.y+5,r:36,fill:'#3f220f',opacity:.35}));
+    s.appendChild(el('circle',{cx:p.x,cy:p.y,r:36,fill:'url(#mb)'}));
+    [[-12,-4],[8,10],[14,-12],[-4,14],[2,-16],[-16,10]].forEach(function(q){
+      s.appendChild(el('circle',{cx:p.x+q[0],cy:p.y+q[1],r:1.7,fill:'#2a1608',opacity:.6}))});
+    s.appendChild(el('ellipse',{cx:p.x-12,cy:p.y-14,rx:10,ry:5,fill:'#fff',opacity:.3,transform:'rotate(-30 '+(p.x-12)+' '+(p.y-14)+')'}));
+    s.appendChild(el('rect',{x:p.x+18,y:p.y-32,width:10,height:6,rx:1.5,fill:'#1f7a4a',transform:'rotate(20 '+(p.x+23)+' '+(p.y-29)+')'}));
+    s.appendChild(el('rect',{x:p.x-32,y:p.y+22,width:8,height:5,rx:1.5,fill:'#1f7a4a'}));
+    var tx=right?p.x+46:p.x-46, anchor=right?'start':'end';
+    var n=el('text',{x:tx,y:p.y-8,'class':'lbl-n','text-anchor':anchor}); n.textContent='0'+(i+1);
+    var t=el('text',{x:tx,y:p.y+22,'class':'lbl-s','text-anchor':anchor}); t.textContent=names[i];
+    s.appendChild(n); s.appendChild(t); g.appendChild(s);
+  });
+  function el(t,a){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);return e}
+  svg.style.setProperty('--len',Math.ceil(L));
+  svg.classList.add('anim');
+})();
+</script>
 </body>
 </html>
