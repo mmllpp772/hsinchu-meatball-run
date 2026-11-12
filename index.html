@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>新竹貢丸路跑 Hsinchu Meatball Run｜活動企劃書</title>
+<meta name="description" content="跑得Q，吃得飽 —— 新竹貢丸路跑活動企劃書">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍢</text></svg>">
+<style>
+:root {
+  --bg: #fbf6ee; --ink: #2b2118; --muted: #7a6a5a; --card: #ffffff;
+  --brown: #8a5a2b; --brown-d: #5e3b1a; --cream: #f3e6d0; --accent: #d9622b; --line: #eadcc6;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink);
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif; line-height: 1.75; }
+.hero { background: radial-gradient(circle at 80% 20%, #b07a45 0, var(--brown) 40%, var(--brown-d) 100%);
+  color: #fff8ec; padding: 72px 20px 88px; text-align: center; position: relative; overflow: hidden; }
+.hero .balls { font-size: 56px; letter-spacing: 8px; animation: bounce 2.4s ease-in-out infinite; display: inline-block; }
+@keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.hero h1 { font-size: clamp(32px, 6vw, 56px); margin: 12px 0 4px; letter-spacing: 2px; }
+.hero .en { opacity: .8; letter-spacing: 4px; text-transform: uppercase; font-size: 14px; }
+.hero .slogan { font-size: clamp(18px, 3vw, 24px); margin-top: 20px; font-weight: 700; }
+.hero .tag { display: inline-block; margin-top: 18px; padding: 4px 14px; border: 1px solid #ffffff66; border-radius: 999px; font-size: 13px; }
+.stats { max-width: 980px; margin: -48px auto 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 0 16px; position: relative; }
+.stat { background: var(--card); border-radius: 16px; padding: 18px; text-align: center; box-shadow: 0 6px 20px #5e3b1a1a; }
+.stat b { display: block; font-size: 26px; color: var(--accent); }
+.stat span { font-size: 13px; color: var(--muted); }
+nav.toc { max-width: 980px; margin: 28px auto 0; padding: 0 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+nav.toc a { text-decoration: none; color: var(--brown-d); background: var(--cream); padding: 4px 12px; border-radius: 999px; font-size: 14px; }
+nav.toc a:hover { background: var(--accent); color: #fff; }
+main { max-width: 980px; margin: 24px auto 60px; padding: 0 16px; }
+.card { background: var(--card); border-radius: 20px; padding: 28px 32px; margin: 20px 0; box-shadow: 0 2px 10px #5e3b1a10; border: 1px solid var(--line); }
+.card h2 { margin-top: 0; color: var(--brown-d); font-size: 26px; border-left: 6px solid var(--accent); padding-left: 12px; }
+.card h3 { color: var(--brown); margin-top: 28px; }
+table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; display: block; overflow-x: auto; }
+th, td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+th { background: var(--cream); color: var(--brown-d); white-space: nowrap; }
+tr:hover td { background: #fdf8f0; }
+blockquote { margin: 14px 0; padding: 10px 16px; background: #fff4e8; border-left: 4px solid var(--accent); border-radius: 8px; color: var(--muted); }
+blockquote p { margin: 0; }
+pre { background: #2b2118; color: #f3e6d0; padding: 16px; border-radius: 12px; overflow-x: auto; font-size: 14px; }
+ul { padding-left: 22px; }
+.note { text-align: center; color: var(--muted); font-size: 14px; margin: 30px 0; }
+footer { text-align: center; color: var(--muted); font-size: 13px; padding: 30px; }
+@media (max-width: 640px) { .stats { grid-template-columns: repeat(2, 1fr); } .card { padding: 20px; } }
+@media print { .hero { padding: 30px; } nav.toc { display: none; } .card { box-shadow: none; break-inside: avoid; } }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="balls">🍢🏃‍♂️🍢</div>
+  <h1>新竹貢丸路跑</h1>
+  <div class="en">Hsinchu Meatball Run</div>
+  <div class="slogan">跑得Q，吃得飽 —— 迎著九降風，一路丸到底！</div>
+  <div class="tag">活動企劃書 v0.1（草案）</div>
+</header>
+<div class="stats">
+  <div class="stat"><b>2,000</b><span>首屆預計人數</span></div>
+  <div class="stat"><b>3 組</b><span>10K／5K／2K</span></div>
+  <div class="stat"><b>2027.03</b><span>預定日期</span></div>
+  <div class="stat"><b>南寮漁港</b><span>起終點</span></div>
+</div>
+<nav class="toc"><a href="#1">1. 活動概要</a><a href="#2">2. 活動緣起與理念</a><a href="#3">3. 目標族群與預期效益</a><a href="#4">4. 賽事組別與報名費</a><a href="#5">5. 路線規劃</a><a href="#6">6. 貢丸特色亮點</a><a href="#7">7. 活動流程（賽事當天）</a><a href="#8">8. 報名物資與完賽獎勵</a><a href="#9">9. 合作夥伴與贊助方案</a><a href="#10">10. 行銷宣傳計畫</a><a href="#11">11. 預算規劃</a><a href="#12">12. 籌備時程</a><a href="#13">13. 風險管理與安全措施</a><a href="#14">14. 永續與在地回饋</a><a href="#15">15. 組織分工</a><a href="#16">16. 附錄：待確認事項</a></nav>
+<main>
+<section class="card"><h2 id="1">1. 活動概要</h2>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>活動名稱</td>
+<td>新竹貢丸路跑 Hsinchu Meatball Run</td>
+</tr>
+<tr>
+<td>活動標語</td>
+<td>跑得Q，吃得飽</td>
+</tr>
+<tr>
+<td>預定日期</td>
+<td>2027 年 3 月（週日上午，日期待與場地單位協調）</td>
+</tr>
+<tr>
+<td>活動地點</td>
+<td>新竹市（起終點建議：南寮漁港周邊）</td>
+</tr>
+<tr>
+<td>主辦單位</td>
+<td>（待定，建議由 Foodie 發起人成立籌備小組）</td>
+</tr>
+<tr>
+<td>協辦單位</td>
+<td>新竹在地貢丸業者、跑團、社區協會（洽談中）</td>
+</tr>
+<tr>
+<td>預計人數</td>
+<td>首屆 2,000 人</td>
+</tr>
+<tr>
+<td>賽事組別</td>
+<td>10K「扎實組」、5K「Q彈組」、2K「親子湯圓組」</td>
+</tr>
+<tr>
+<td>核心特色</td>
+<td>貢丸補給站、貢丸造型完賽獎牌、完賽貢丸湯、在地美食市集</td>
+</tr>
+</tbody>
+</table></section><section class="card"><h2 id="2">2. 活動緣起與理念</h2>
+<p>新竹以「風城」聞名，而貢丸更是新竹最具代表性的在地美食之一 —— 用新鮮豬後腿肉反覆捶打，才有那一口紮實又 Q 彈的口感。</p>
+<p><strong>「捶打」與「跑步」其實很像</strong>：都要反覆、持續地出力，才能練出好體質。這場路跑想把這份精神串起來：</p>
+<ul>
+<li>🍢 <strong>美食 × 運動</strong>：讓跑者用雙腳認識新竹，用味蕾記住新竹。</li>
+<li>🌬️ <strong>風城特色</strong>：善用新竹的風，打造「逆風也要丸到底」的記憶點。</li>
+<li>🏘️ <strong>在地連結</strong>：讓參加者跑完後走進老店、市場與商圈，帶動在地消費。</li>
+<li>😄 <strong>好玩有梗</strong>：不追求成績的歡樂路跑，適合第一次跑步的人、家庭與美食愛好者。</li>
+</ul></section><section class="card"><h2 id="3">3. 目標族群與預期效益</h2>
+<h3 id="31">3.1 目標族群</h3>
+<table>
+<thead>
+<tr>
+<th>族群</th>
+<th>說明</th>
+<th>吸引點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>美食愛好者</td>
+<td>Foodie、美食部落客、IG 吃貨</td>
+<td>可以邊跑邊吃，拍照好看</td>
+</tr>
+<tr>
+<td>休閒跑者</td>
+<td>想嘗試路跑的新手</td>
+<td>距離友善、氣氛輕鬆</td>
+</tr>
+<tr>
+<td>親子家庭</td>
+<td>竹科、竹北一帶的年輕家庭</td>
+<td>親子組、市集、兒童活動</td>
+</tr>
+<tr>
+<td>外縣市觀光客</td>
+<td>北部、桃園、台中的週末旅客</td>
+<td>一日遊行程：路跑 + 美食</td>
+</tr>
+<tr>
+<td>竹科企業</td>
+<td>企業福委會、員工社團</td>
+<td>團體報名、企業品牌曝光</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-kpi">3.2 預期效益（KPI）</h3>
+<table>
+<thead>
+<tr>
+<th>指標</th>
+<th>首屆目標</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>報名人數</td>
+<td>2,000 人（額滿率 90% 以上）</td>
+</tr>
+<tr>
+<td>外縣市參加者比例</td>
+<td>30% 以上</td>
+</tr>
+<tr>
+<td>社群曝光</td>
+<td>社群觸及 50 萬人次以上</td>
+</tr>
+<tr>
+<td>參與在地店家</td>
+<td>15 家以上</td>
+</tr>
+<tr>
+<td>市集消費</td>
+<td>跑者與親友平均每人消費 300 元以上</td>
+</tr>
+<tr>
+<td>參加者滿意度</td>
+<td>4.3 / 5 分以上</td>
+</tr>
+<tr>
+<td>明年再參加意願</td>
+<td>70% 以上</td>
+</tr>
+</tbody>
+</table></section><section class="card"><h2 id="4">4. 賽事組別與報名費</h2>
+<table>
+<thead>
+<tr>
+<th>組別</th>
+<th>距離</th>
+<th>名額</th>
+<th>報名費（早鳥 / 一般）</th>
+<th>關門時間</th>
+<th>適合對象</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🥇 扎實組</td>
+<td>10K</td>
+<td>800</td>
+<td>900 / 1,050 元</td>
+<td>90 分鐘</td>
+<td>有路跑經驗者</td>
+</tr>
+<tr>
+<td>🥈 Q彈組</td>
+<td>5K</td>
+<td>900</td>
+<td>750 / 850 元</td>
+<td>60 分鐘</td>
+<td>新手、上班族</td>
+</tr>
+<tr>
+<td>🥉 親子湯圓組</td>
+<td>2K</td>
+<td>300 組</td>
+<td>1,100 / 1,200 元（1 大 1 小）</td>
+<td>不計時</td>
+<td>親子家庭</td>
+</tr>
+</tbody>
+</table>
+<p><strong>團體優惠</strong>：10 人以上團報 9 折，企業 30 人以上另議。</p>
+<blockquote>
+<p>💡 報名費參考台灣一般城市主題路跑行情，正式定價前建議再比較近期同性質賽事。</p>
+</blockquote></section><section class="card"><h2 id="5">5. 路線規劃</h2>
+<h3 id="51">5.1 起終點建議：南寮漁港周邊</h3>
+<ul>
+<li>腹地大，可容納會場、市集與停車需求</li>
+<li>鄰近新竹海岸自行車道，景觀開闊、路線平坦</li>
+<li>海風強，正好呼應「風城」主題（同時列入風險評估）</li>
+</ul>
+<h3 id="52">5.2 路線概念（需經實地勘查與主管機關核准）</h3>
+<pre><code>【10K 扎實組】
+南寮漁港（起點）→ 沿海岸線往南 → 折返點 → 回程 → 南寮漁港（終點）
+補給站：2.5K / 5K / 7.5K
+
+【5K Q彈組】
+南寮漁港（起點）→ 沿海岸線往南 → 2.5K 折返 → 南寮漁港（終點）
+補給站：2.5K
+
+【2K 親子湯圓組】
+南寮漁港周邊環狀路線，全程封閉、無車輛
+補給站：1K（兒童點心）
+</code></pre>
+<h3 id="53">5.3 路線設計原則</h3>
+<ul>
+<li>盡量使用自行車道、休閒步道，減少封路對交通的影響</li>
+<li>坡度平緩，新手友善</li>
+<li>每 2.5 公里設一個補給站、醫護點</li>
+<li>終點後設「貢丸大道」，直接通往美食市集</li>
+</ul>
+<h3 id="54">5.4 備案路線</h3>
+<p>若海岸路線申請不通過，備案為：<strong>新竹市區「城隍廟 — 東門城 — 護城河」路線</strong>，可串連新竹老城區與貢丸老店，但需要更多封路協調。</p></section><section class="card"><h2 id="6">6. 貢丸特色亮點</h2>
+<p>這是整場活動的靈魂，所有設計都圍繞「貢丸」：</p>
+<h3 id="61">🍢 6.1 貢丸補給站</h3>
+<ul>
+<li>一般補給站提供水、運動飲料</li>
+<li><strong>終點前最後一站</strong>提供「迷你貢丸串」（切小塊、常溫，避免跑步中噎到）</li>
+<li>每站由不同在地貢丸店家擺攤，跑者可以「集章」</li>
+</ul>
+<h3 id="62">🥣 6.2 完賽貢丸湯</h3>
+<ul>
+<li>每位完賽者可兌換一碗熱騰騰的貢丸湯（配新竹米粉可加價）</li>
+<li>以完賽兌換券領取，避免排隊混亂</li>
+</ul>
+<h3 id="63">🏅 6.3 貢丸造型完賽獎牌</h3>
+<ul>
+<li>立體圓形獎牌，正面是貢丸造型、背面刻上新竹地標與年份</li>
+<li>每年換一種口味配色（原味、香菇、芹菜……），鼓勵年年蒐集</li>
+</ul>
+<h3 id="64">🎭 6.4 貢丸人收容車</h3>
+<ul>
+<li>關門收容員穿著「巨型貢丸」人偶裝，壓在最後面慢慢跑</li>
+<li>被貢丸人追上 = 被「丸」掉了 😆，製造話題與拍照點</li>
+</ul>
+<h3 id="65">📸 6.5 角色扮演獎</h3>
+<ul>
+<li>鼓勵跑者 cosplay（貢丸、竹籤、米粉、新竹風……）</li>
+<li>現場評選「最佳貢丸造型獎」，獎品為貢丸禮盒一年份</li>
+</ul>
+<h3 id="66">🍽️ 6.6 貢丸大胃王挑戰（市集舞台活動）</h3>
+<ul>
+<li>限時吃貢丸比賽，<strong>須簽署健康聲明、現場醫護待命、貢丸切小塊</strong></li>
+<li>以趣味為主，不鼓勵過量進食</li>
+</ul>
+<h3 id="67">🗺️ 6.7 「跑後吃遍新竹」美食地圖</h3>
+<ul>
+<li>報名包內附在地店家地圖與優惠券</li>
+<li>憑號碼布在合作店家消費享折扣，有效期一週，延長觀光停留</li>
+</ul></section><section class="card"><h2 id="7">7. 活動流程（賽事當天）</h2>
+<table>
+<thead>
+<tr>
+<th>時間</th>
+<th>流程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>05:00</td>
+<td>工作人員集合、會場最後檢查</td>
+</tr>
+<tr>
+<td>05:30</td>
+<td>會場開放、寄物區開放</td>
+</tr>
+<tr>
+<td>06:15</td>
+<td>開幕儀式、貴賓致詞、熱身操（貢丸操 🎵）</td>
+</tr>
+<tr>
+<td>06:40</td>
+<td>10K 扎實組 鳴槍起跑</td>
+</tr>
+<tr>
+<td>06:55</td>
+<td>5K Q彈組 鳴槍起跑</td>
+</tr>
+<tr>
+<td>07:20</td>
+<td>2K 親子湯圓組 起跑</td>
+</tr>
+<tr>
+<td>07:30</td>
+<td>美食市集開放</td>
+</tr>
+<tr>
+<td>08:10</td>
+<td>10K 關門時間</td>
+</tr>
+<tr>
+<td>08:30</td>
+<td>頒獎典禮（各組男女前三名、最佳造型獎）</td>
+</tr>
+<tr>
+<td>09:00</td>
+<td>貢丸大胃王挑戰</td>
+</tr>
+<tr>
+<td>10:00</td>
+<td>抽獎活動</td>
+</tr>
+<tr>
+<td>11:00</td>
+<td>活動結束、市集營業至 13:00</td>
+</tr>
+<tr>
+<td>13:00</td>
+<td>撤場、環境復原</td>
+</tr>
+</tbody>
+</table></section><section class="card"><h2 id="8">8. 報名物資與完賽獎勵</h2>
+<h3 id="81">8.1 報名包</h3>
+<table>
+<thead>
+<tr>
+<th>物品</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>號碼布 + 計時晶片</td>
+<td>號碼布設計成貢丸包裝紙風格</td>
+</tr>
+<tr>
+<td>排汗衫</td>
+<td>主視覺「奔跑的貢丸」</td>
+</tr>
+<tr>
+<td>貢丸造型毛巾 / 頭巾</td>
+<td>實用又好拍</td>
+</tr>
+<tr>
+<td>美食地圖 + 店家優惠券</td>
+<td>促進賽後消費</td>
+</tr>
+<tr>
+<td>貢丸兌換券</td>
+<td>完賽後領貢丸湯</td>
+</tr>
+<tr>
+<td>環保餐具組</td>
+<td>配合市集減塑</td>
+</tr>
+</tbody>
+</table>
+<h3 id="82">8.2 完賽禮</h3>
+<ul>
+<li>貢丸造型完賽獎牌</li>
+<li>完賽貢丸湯一碗</li>
+<li>電子完賽證明（可下載分享至社群）</li>
+<li>各組前三名：獎盃 + 在地貢丸禮盒</li>
+</ul></section><section class="card"><h2 id="9">9. 合作夥伴與贊助方案</h2>
+<h3 id="91">9.1 潛在合作對象</h3>
+<ul>
+<li><strong>在地貢丸業者</strong>：補給站、市集攤位、禮盒贊助</li>
+<li><strong>新竹米粉業者</strong>：搭配「米粉貢丸湯」</li>
+<li><strong>竹科企業</strong>：冠名、企業團報、員工志工</li>
+<li><strong>運動品牌 / 運動飲料</strong>：服裝、補給</li>
+<li><strong>在地跑團</strong>：配速員、路線諮詢</li>
+<li><strong>新竹市政府相關局處</strong>：場地、交通、觀光宣傳（需正式申請）</li>
+</ul>
+<h3 id="92">9.2 贊助方案</h3>
+<table>
+<thead>
+<tr>
+<th>方案</th>
+<th>金額</th>
+<th>權益</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🍢 冠名贊助</td>
+<td>50 萬元</td>
+<td>活動冠名、主視覺 Logo、起終點拱門、舞台致詞、50 個免費名額</td>
+</tr>
+<tr>
+<td>🥇 金丸贊助</td>
+<td>20 萬元</td>
+<td>衣服背面 Logo、會場攤位、社群貼文 3 則、20 個名額</td>
+</tr>
+<tr>
+<td>🥈 銀丸贊助</td>
+<td>10 萬元</td>
+<td>背板 Logo、會場攤位、社群貼文 1 則、10 個名額</td>
+</tr>
+<tr>
+<td>🥉 銅丸贊助</td>
+<td>3 萬元</td>
+<td>背板 Logo、報名包放置宣傳品</td>
+</tr>
+<tr>
+<td>🤝 實物贊助</td>
+<td>依價值計</td>
+<td>貢丸、飲料、獎品等，依價值對應權益</td>
+</tr>
+</tbody>
+</table></section><section class="card"><h2 id="10">10. 行銷宣傳計畫</h2>
+<h3 id="101">10.1 階段規劃</h3>
+<table>
+<thead>
+<tr>
+<th>階段</th>
+<th>時間</th>
+<th>重點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>預熱期</td>
+<td>開放報名前 1 個月</td>
+<td>公布主視覺、獎牌，投票選「貢丸人」名字</td>
+</tr>
+<tr>
+<td>報名期</td>
+<td>報名開放後 6 週</td>
+<td>早鳥優惠、企業團報、KOL 合作</td>
+</tr>
+<tr>
+<td>倒數期</td>
+<td>賽前 1 個月</td>
+<td>路線影片、店家介紹系列、練跑團</td>
+</tr>
+<tr>
+<td>活動當天</td>
+<td>賽事日</td>
+<td>直播、即時限動、打卡活動</td>
+</tr>
+<tr>
+<td>延續期</td>
+<td>賽後 2 週</td>
+<td>照片下載、精華影片、滿意度問卷、明年預告</td>
+</tr>
+</tbody>
+</table>
+<h3 id="102">10.2 宣傳管道</h3>
+<ul>
+<li><strong>社群媒體</strong>：IG、Facebook、Threads、TikTok（短影音「貢丸挑戰」）</li>
+<li><strong>美食 KOL</strong>：邀請新竹美食部落客、Foodie 網紅體驗試跑</li>
+<li><strong>跑步社群</strong>：跑步相關社團、報名平台、跑團聯名</li>
+<li><strong>在地通路</strong>：店家張貼海報、市場廣播</li>
+<li><strong>企業內部</strong>：竹科企業福委會、內部通訊</li>
+</ul>
+<h3 id="103">10.3 話題梗</h3>
+<ul>
+<li>
+<h1 id="_1">被丸掉了（被貢丸人追上）</h1>
+</li>
+<li>
+<h1 id="_2">跑完再丸一碗</h1>
+</li>
+<li>
+<h1 id="_3">風城丸跑</h1>
+</li>
+<li>「捶打 1,000 下的貢丸 vs 跑 10,000 步的你」</li>
+</ul></section><section class="card"><h2 id="11">11. 預算規劃</h2>
+<blockquote>
+<p>以下為 2,000 人規模的<strong>粗估</strong>，正式報價需向廠商詢價後更新。</p>
+</blockquote>
+<h3 id="111">11.1 支出</h3>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>估算金額（元）</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>場地與行政申請</td>
+<td>80,000</td>
+<td>場地、道路使用、相關規費</td>
+</tr>
+<tr>
+<td>計時系統與晶片</td>
+<td>200,000</td>
+<td>委外計時公司</td>
+</tr>
+<tr>
+<td>報名包（衣服、毛巾等）</td>
+<td>700,000</td>
+<td>約 350 元 / 人</td>
+</tr>
+<tr>
+<td>完賽獎牌</td>
+<td>240,000</td>
+<td>客製立體獎牌，約 120 元 / 面</td>
+</tr>
+<tr>
+<td>貢丸湯與補給</td>
+<td>200,000</td>
+<td>部分可由店家實物贊助抵扣</td>
+</tr>
+<tr>
+<td>會場佈置（拱門、舞台、帳篷）</td>
+<td>300,000</td>
+<td></td>
+</tr>
+<tr>
+<td>醫護與救護</td>
+<td>100,000</td>
+<td>救護車、醫護人員、AED</td>
+</tr>
+<tr>
+<td>保險</td>
+<td>60,000</td>
+<td>公共意外責任險 + 參賽者保險</td>
+</tr>
+<tr>
+<td>交通管制與保全</td>
+<td>150,000</td>
+<td>交管人員、保全</td>
+</tr>
+<tr>
+<td>流動廁所與清潔</td>
+<td>80,000</td>
+<td></td>
+</tr>
+<tr>
+<td>行銷宣傳</td>
+<td>200,000</td>
+<td>廣告投放、KOL、影像拍攝</td>
+</tr>
+<tr>
+<td>工作人員與志工</td>
+<td>120,000</td>
+<td>餐點、保險、服裝</td>
+</tr>
+<tr>
+<td>獎品與抽獎</td>
+<td>50,000</td>
+<td>大多由贊助提供</td>
+</tr>
+<tr>
+<td>預備金（約 10%）</td>
+<td>248,000</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>支出合計</strong></td>
+<td><strong>2,728,000</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="112">11.2 收入</h3>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>估算金額（元）</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>報名費</td>
+<td>1,800,000</td>
+<td>以平均 900 元 × 2,000 人估算</td>
+</tr>
+<tr>
+<td>企業贊助</td>
+<td>800,000</td>
+<td>冠名 1 + 金丸 1 + 銀丸 1</td>
+</tr>
+<tr>
+<td>市集攤位費</td>
+<td>100,000</td>
+<td>20 攤 × 5,000 元</td>
+</tr>
+<tr>
+<td>政府補助（申請中）</td>
+<td>150,000</td>
+<td>視申請結果</td>
+</tr>
+<tr>
+<td><strong>收入合計</strong></td>
+<td><strong>2,850,000</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>預估結餘：約 +122,000 元</strong>（若贊助未達標，需調整報名包內容或人數規模）</p></section><section class="card"><h2 id="12">12. 籌備時程</h2>
+<p>以 <strong>2027 年 3 月</strong>活動日為基準：</p>
+<table>
+<thead>
+<tr>
+<th>時間</th>
+<th>工作項目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026/11</td>
+<td>企劃定稿、成立籌備小組</td>
+</tr>
+<tr>
+<td>2026/12</td>
+<td>路線勘查、向主管機關洽詢場地與道路使用</td>
+</tr>
+<tr>
+<td>2026/12</td>
+<td>洽談貢丸店家、贊助商</td>
+</tr>
+<tr>
+<td>2027/01 上旬</td>
+<td>主視覺、獎牌、衣服設計定稿</td>
+</tr>
+<tr>
+<td>2027/01 中旬</td>
+<td>開放報名（早鳥 2 週）</td>
+</tr>
+<tr>
+<td>2027/01 下旬</td>
+<td>物資下單（衣服、獎牌、晶片）</td>
+</tr>
+<tr>
+<td>2027/02</td>
+<td>志工招募與培訓、宣傳衝刺</td>
+</tr>
+<tr>
+<td>2027/02 下旬</td>
+<td>報名截止、確認交管與醫護</td>
+</tr>
+<tr>
+<td>2027/03 上旬</td>
+<td>報名包寄送 / 現場領取、會場彩排</td>
+</tr>
+<tr>
+<td><strong>2027/03（活動日）</strong></td>
+<td><strong>🏃 新竹貢丸路跑</strong></td>
+</tr>
+<tr>
+<td>活動後 2 週</td>
+<td>結案報告、帳務結算、贊助商成果報告</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ 時程偏緊，若申請流程較長，建議順延至 2027 年 4 月。</p>
+</blockquote></section><section class="card"><h2 id="13">13. 風險管理與安全措施</h2>
+<table>
+<thead>
+<tr>
+<th>風險</th>
+<th>對策</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>強風</strong>（新竹秋冬季風強）</td>
+<td>拱門、帳篷加強固定；超過安全風速時拆除高架物；必要時改線或縮短距離</td>
+</tr>
+<tr>
+<td><strong>天候不佳</strong>（大雨、寒流）</td>
+<td>訂定雨天備案與停辦標準，於報名簡章載明退費規則</td>
+</tr>
+<tr>
+<td><strong>運動傷害 / 身體不適</strong></td>
+<td>每 2.5K 設醫護站、AED、救護車待命；終點設醫療帳</td>
+</tr>
+<tr>
+<td><strong>食物噎到</strong></td>
+<td>跑步中只提供切小塊的貢丸；熱湯僅於完賽後提供；大胃王挑戰須醫護在場</td>
+</tr>
+<tr>
+<td><strong>食品安全</strong></td>
+<td>合作店家須有合法登記；補給以當日製作、溫度控管；保留供應紀錄</td>
+</tr>
+<tr>
+<td><strong>食物過敏</strong></td>
+<td>報名表詢問過敏原；攤位標示成分</td>
+</tr>
+<tr>
+<td><strong>交通與人流</strong></td>
+<td>與警方協調交管；設置接駁車與停車引導</td>
+</tr>
+<tr>
+<td><strong>兒童走失</strong></td>
+<td>親子組配戴親子同號手環，設置走失兒童服務站</td>
+</tr>
+<tr>
+<td><strong>報名不足</strong></td>
+<td>設定最低成團人數，未達標則縮小規模或延期</td>
+</tr>
+<tr>
+<td><strong>贊助不足</strong></td>
+<td>預備精簡版預算（減少贈品、改用標準獎牌）</td>
+</tr>
+</tbody>
+</table></section><section class="card"><h2 id="14">14. 永續與在地回饋</h2>
+<ul>
+<li>♻️ <strong>減塑</strong>：自備杯優惠、市集使用可重複使用餐具，減少一次性塑膠</li>
+<li>🗑️ <strong>垃圾分類</strong>：會場設分類站、志工引導</li>
+<li>🤝 <strong>在地優先</strong>：優先採購新竹在地貢丸與食材</li>
+<li>❤️ <strong>公益</strong>：每位報名者提撥 20 元捐給在地社福團體（例如食物銀行）</li>
+<li>🌊 <strong>淨灘</strong>：活動後一天舉辦志工淨灘，回饋場地</li>
+</ul></section><section class="card"><h2 id="15">15. 組織分工</h2>
+<table>
+<thead>
+<tr>
+<th>組別</th>
+<th>主要職責</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>總召</td>
+<td>整體統籌、對外窗口、決策</td>
+</tr>
+<tr>
+<td>賽務組</td>
+<td>路線、計時、補給站、關門收容</td>
+</tr>
+<tr>
+<td>行政組</td>
+<td>場地與道路申請、保險、合約</td>
+</tr>
+<tr>
+<td>美食組</td>
+<td>店家招募、補給品質、市集規劃、食安管理</td>
+</tr>
+<tr>
+<td>行銷組</td>
+<td>主視覺、社群、KOL、媒體</td>
+</tr>
+<tr>
+<td>財務組</td>
+<td>預算、收支、贊助款</td>
+</tr>
+<tr>
+<td>志工組</td>
+<td>招募、培訓、排班、當天調度</td>
+</tr>
+<tr>
+<td>安全醫護組</td>
+<td>醫護、交管、緊急應變</td>
+</tr>
+</tbody>
+</table>
+<p><strong>志工需求</strong>：約 150 人（補給站、報到、寄物、引導、清潔）</p></section><section class="card"><h2 id="16">16. 附錄：待確認事項</h2>
+<ul>
+<li>☐ 主辦單位與法人身分（個人辦活動較難簽約、保險與收款，建議找協會或公司合辦）</li>
+<li>☐ 實際活動日期與場地檔期</li>
+<li>☐ 主管機關的場地 / 道路使用申請流程與所需時間</li>
+<li>☐ 路線實地勘查與距離丈量</li>
+<li>☐ 合作貢丸店家名單</li>
+<li>☐ 計時公司、獎牌廠商、服裝廠商報價</li>
+<li>☐ 保險條件</li>
+<li>☐ 政府補助申請管道</li>
+<li>☐ 主視覺設計師</li>
+</ul>
+
+<p><em>本企劃書為初版草案，內容（金額、路線、日期）皆為規劃參考，需經實地勘查、廠商詢價與主管機關確認後修訂。</em></p></section>
+</main>
+<footer>🍢 新竹貢丸路跑籌備小組 · 企劃草案，內容以正式公告為準</footer>
+</body>
+</html>
