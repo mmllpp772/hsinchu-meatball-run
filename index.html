@@ -19,7 +19,7 @@
   --chili:#d8452b;   /* 辣醬 */
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{background:var(--noodle);color:var(--meat);font-family:"Noto Serif TC",serif;}
 .lat{font-family:"Archivo",sans-serif}
 
@@ -66,20 +66,30 @@ body{background:var(--noodle);color:var(--meat);font-family:"Noto Serif TC",seri
 @media (prefers-reduced-motion:reduce){.anim .road,.anim .lane,.anim .stop{animation:none;opacity:1;stroke-dashoffset:0;transform:none}}
 
 /* ---------- Stops ---------- */
-.list{max-width:880px;margin:0 auto;padding:clamp(56px,9vw,110px) 24px 40px}
+.list{max-width:1080px;margin:0 auto;padding:clamp(56px,9vw,110px) 24px 40px}
 .list h2{font-weight:900;font-size:clamp(30px,5vw,46px);line-height:1.2;margin-bottom:8px}
 .list .lede{font-size:17px;line-height:1.8;margin-bottom:36px;max-width:34em}
-ol{list-style:none;border-top:3px solid var(--meat)}
-li{display:grid;grid-template-columns:64px 1fr auto;gap:4px 20px;align-items:center;
-  padding:22px 0;border-bottom:1px solid #55301a40}
-li .ball{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;
-  background:radial-gradient(circle at 34% 30%,#9a6338,#55301a 70%);color:var(--noodle);
+ol{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:40px 28px}
+li{display:flex;flex-direction:column}
+.photo{position:relative;display:block;aspect-ratio:4/5;border:3px solid var(--meat);
+  background:var(--img) center/cover no-repeat,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23f2bf3f'/%3E%3Ccircle cx='100' cy='100' r='84' fill='%23fbf6e8'/%3E%3Ccircle cx='100' cy='100' r='70' fill='%23e3a93a'/%3E%3Ccircle cx='78' cy='86' r='22' fill='%2355301a'/%3E%3Ccircle cx='122' cy='92' r='22' fill='%2366391d'/%3E%3Ccircle cx='98' cy='126' r='22' fill='%235d341a'/%3E%3Ccircle cx='71' cy='79' r='5' fill='%23fff' opacity='.3'/%3E%3Ccircle cx='115' cy='85' r='5' fill='%23fff' opacity='.3'/%3E%3Ccircle cx='91' cy='119' r='5' fill='%23fff' opacity='.3'/%3E%3Crect x='60' y='112' width='8' height='6' rx='2' fill='%231f7a4a'/%3E%3Crect x='130' y='120' width='7' height='5' rx='2' fill='%231f7a4a'/%3E%3Crect x='104' y='62' width='8' height='6' rx='2' fill='%231f7a4a'/%3E%3Crect x='140' y='76' width='6' height='5' rx='2' fill='%231f7a4a'/%3E%3C/svg%3E") center/100% auto no-repeat var(--broth);
+  box-shadow:6px 6px 0 var(--meat);transition:transform .15s,box-shadow .15s}
+.photo:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--meat)}
+.photo:focus-visible,.links a:focus-visible{outline:3px solid var(--chili);outline-offset:3px}
+.photo .ball{position:absolute;left:-14px;top:-14px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle at 34% 30%,#9a6338,#55301a 70%);color:var(--noodle);border:3px solid var(--noodle);
   font-family:"Archivo",sans-serif;font-weight:800;font-size:18px}
-li h3{font-weight:900;font-size:clamp(22px,3.4vw,30px);line-height:1.2}
-li .where{grid-column:2;font-size:15px;opacity:.75}
-li .eat{grid-row:1/3;grid-column:3;font-size:16px;font-weight:500;color:var(--celery);text-align:right;white-space:nowrap}
+.info{padding-top:18px}
+li h3{font-weight:900;font-size:26px;line-height:1.25}
+li .where{font-size:15px;opacity:.75;margin-top:2px}
+li .eat{font-size:16px;font-weight:500;color:var(--celery);margin-top:6px}
 li .mark{display:inline-block;vertical-align:middle;margin-left:10px;font-size:13px;font-weight:500;
   color:var(--chili);border:1.5px solid var(--chili);border-radius:3px;padding:0 6px;line-height:1.6}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.links a{font-size:14px;font-weight:500;text-decoration:none;color:var(--meat);border:2px solid var(--meat);
+  padding:5px 12px;border-radius:999px}
+.links a:first-child{background:var(--meat);color:var(--noodle)}
+.links a:hover{background:var(--chili);border-color:var(--chili);color:var(--noodle)}
 footer{text-align:center;padding:24px 24px 60px;font-size:14px;opacity:.7}
 
 /* ---------- Mobile ---------- */
@@ -90,9 +100,6 @@ footer{text-align:center;padding:24px 24px 60px;font-size:14px;opacity:.7}
   .title h1{writing-mode:horizontal-tb;font-size:clamp(46px,14vw,72px);line-height:1.05}
   .title .side{display:none}
   .course svg{max-height:none;margin:0 auto}
-  li{grid-template-columns:52px 1fr;gap:2px 14px}
-  li .ball{width:44px;height:44px;font-size:16px;grid-row:1/4}
-  li .eat{grid-row:auto;grid-column:2;text-align:left;white-space:normal}
 }
 </style>
 </head>
@@ -138,14 +145,62 @@ footer{text-align:center;padding:24px 24px 60px;font-size:14px;opacity:.7}
 
 <main class="list">
   <h2>六個補給站</h2>
-  <p class="lede">從芎林一路吃回新竹舊城，照這個順序走，早餐吃到晚餐。</p>
+  <p class="lede">從芎林一路吃回新竹舊城，照這個順序走，早餐吃到晚餐。點照片看 IG 上的美食照。</p>
   <ol>
-    <li><span class="ball">1</span><h3>一哥炊粉<span class="mark">必比登</span></h3><span class="where">芎林鄉福昌街 621 號</span><span class="eat">炊粉＋貢丸湯</span></li>
-    <li><span class="ball">2</span><h3>石家魚丸</h3><span class="where">東區興學街，80 年老店</span><span class="eat">手工貢丸湯</span></li>
-    <li><span class="ball">3</span><h3>海瑞摃丸</h3><span class="where">北區西門街 98 號，1948 年創立</span><span class="eat">原味＋怪口味貢丸</span></li>
-    <li><span class="ball">4</span><h3>阿城號米粉</h3><span class="where">城隍廟內，中山路 75 號</span><span class="eat">炒米粉＋貢丸湯</span></li>
-    <li><span class="ball">5</span><h3>柳家肉燥飯</h3><span class="where">城隍廟前廣場</span><span class="eat">炒米粉＋貢丸湯</span></li>
-    <li><span class="ball">6</span><h3>東門米粉攤<span class="mark">必比登</span></h3><span class="where">東門市場 1158 號</span><span class="eat">芋頭米粉湯</span></li>
+    <li id="s1">
+      <a class="photo" href="https://www.instagram.com/explore/tags/%E4%B8%80%E5%93%A5%E7%82%8A%E7%B2%89/" target="_blank" rel="noopener" style="--img:url(images/01.jpg)" aria-label="一哥炊粉 的 IG 美食照"><span class="ball">1</span></a>
+      <div class="info">
+        <h3>一哥炊粉<span class="mark">必比登</span></h3>
+        <p class="where">芎林鄉福昌街 621 號</p>
+        <p class="eat">炊粉＋貢丸湯</p>
+        <p class="links"><a href="https://www.instagram.com/explore/tags/%E4%B8%80%E5%93%A5%E7%82%8A%E7%B2%89/" target="_blank" rel="noopener">IG 美食照 #一哥炊粉</a><a href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E7%AB%B9%E7%B8%A3%E8%8A%8E%E6%9E%97%E9%84%89%E7%A6%8F%E6%98%8C%E8%A1%97621%E8%99%9F%20%E4%B8%80%E5%93%A5%E7%82%8A%E7%B2%89" target="_blank" rel="noopener">地圖</a></p>
+      </div>
+    </li>
+    <li id="s2">
+      <a class="photo" href="https://www.instagram.com/explore/tags/%E7%9F%B3%E5%AE%B6%E9%AD%9A%E4%B8%B8/" target="_blank" rel="noopener" style="--img:url(images/02.jpg)" aria-label="石家魚丸 的 IG 美食照"><span class="ball">2</span></a>
+      <div class="info">
+        <h3>石家魚丸</h3>
+        <p class="where">東區興學街，80 年老店</p>
+        <p class="eat">手工貢丸湯</p>
+        <p class="links"><a href="https://www.instagram.com/explore/tags/%E7%9F%B3%E5%AE%B6%E9%AD%9A%E4%B8%B8/" target="_blank" rel="noopener">IG 美食照 #石家魚丸</a><a href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E7%AB%B9%20%E8%88%88%E5%AD%B8%E8%A1%97%20%E7%9F%B3%E5%AE%B6%E9%AD%9A%E4%B8%B8" target="_blank" rel="noopener">地圖</a></p>
+      </div>
+    </li>
+    <li id="s3">
+      <a class="photo" href="https://www.instagram.com/explore/tags/%E6%B5%B7%E7%91%9E%E6%91%83%E4%B8%B8/" target="_blank" rel="noopener" style="--img:url(images/03.jpg)" aria-label="海瑞摃丸 的 IG 美食照"><span class="ball">3</span></a>
+      <div class="info">
+        <h3>海瑞摃丸</h3>
+        <p class="where">北區西門街 98 號，1948 年創立</p>
+        <p class="eat">原味＋怪口味貢丸</p>
+        <p class="links"><a href="https://www.instagram.com/explore/tags/%E6%B5%B7%E7%91%9E%E6%91%83%E4%B8%B8/" target="_blank" rel="noopener">IG 美食照 #海瑞摃丸</a><a href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E7%AB%B9%E5%B8%82%E8%A5%BF%E9%96%80%E8%A1%9798%E8%99%9F%20%E6%B5%B7%E7%91%9E%E6%91%83%E4%B8%B8" target="_blank" rel="noopener">地圖</a></p>
+      </div>
+    </li>
+    <li id="s4">
+      <a class="photo" href="https://www.instagram.com/explore/tags/%E9%98%BF%E5%9F%8E%E8%99%9F%E7%B1%B3%E7%B2%89/" target="_blank" rel="noopener" style="--img:url(images/04.jpg)" aria-label="阿城號米粉 的 IG 美食照"><span class="ball">4</span></a>
+      <div class="info">
+        <h3>阿城號米粉</h3>
+        <p class="where">城隍廟內，中山路 75 號</p>
+        <p class="eat">炒米粉＋貢丸湯</p>
+        <p class="links"><a href="https://www.instagram.com/explore/tags/%E9%98%BF%E5%9F%8E%E8%99%9F%E7%B1%B3%E7%B2%89/" target="_blank" rel="noopener">IG 美食照 #阿城號米粉</a><a href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E7%AB%B9%E5%9F%8E%E9%9A%8D%E5%BB%9F%20%E9%98%BF%E5%9F%8E%E8%99%9F%E7%B1%B3%E7%B2%89" target="_blank" rel="noopener">地圖</a></p>
+      </div>
+    </li>
+    <li id="s5">
+      <a class="photo" href="https://www.instagram.com/explore/tags/%E6%9F%B3%E5%AE%B6%E8%82%89%E7%87%A5%E9%A3%AF/" target="_blank" rel="noopener" style="--img:url(images/05.jpg)" aria-label="柳家肉燥飯 的 IG 美食照"><span class="ball">5</span></a>
+      <div class="info">
+        <h3>柳家肉燥飯</h3>
+        <p class="where">城隍廟前廣場</p>
+        <p class="eat">炒米粉＋貢丸湯</p>
+        <p class="links"><a href="https://www.instagram.com/explore/tags/%E6%9F%B3%E5%AE%B6%E8%82%89%E7%87%A5%E9%A3%AF/" target="_blank" rel="noopener">IG 美食照 #柳家肉燥飯</a><a href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E7%AB%B9%E5%9F%8E%E9%9A%8D%E5%BB%9F%20%E6%9F%B3%E5%AE%B6%E8%82%89%E7%87%A5%E9%A3%AF" target="_blank" rel="noopener">地圖</a></p>
+      </div>
+    </li>
+    <li id="s6">
+      <a class="photo" href="https://www.instagram.com/explore/tags/%E6%9D%B1%E9%96%80%E7%B1%B3%E7%B2%89%E6%94%A4/" target="_blank" rel="noopener" style="--img:url(images/06.jpg)" aria-label="東門米粉攤 的 IG 美食照"><span class="ball">6</span></a>
+      <div class="info">
+        <h3>東門米粉攤<span class="mark">必比登</span></h3>
+        <p class="where">東門市場 1158 號</p>
+        <p class="eat">芋頭米粉湯</p>
+        <p class="links"><a href="https://www.instagram.com/explore/tags/%E6%9D%B1%E9%96%80%E7%B1%B3%E7%B2%89%E6%94%A4/" target="_blank" rel="noopener">IG 美食照 #東門米粉攤</a><a href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E7%AB%B9%20%E6%9D%B1%E9%96%80%E5%B8%82%E5%A0%B4%20%E6%9D%B1%E9%96%80%E7%B1%B3%E7%B2%89%E6%94%A4" target="_blank" rel="noopener">地圖</a></p>
+      </div>
+    </li>
   </ol>
 </main>
 <footer>店家營業時間常有變動，出發前請先確認。</footer>
@@ -167,7 +222,7 @@ footer{text-align:center;padding:24px 24px 60px;font-size:14px;opacity:.7}
   L=path.getTotalLength();
   stops.forEach(function(k,i){
     var p={x:pts[k][0],y:pts[k][1]}, right=[1,0,1,0,1,1][i];
-    var s=el('g',{'class':'stop'}); s.style.animationDelay=(0.45+i*0.22)+'s';
+    var a=el('a',{href:'#s'+(i+1)}); var s=el('g',{'class':'stop'}); a.appendChild(s); s.style.cursor='pointer'; s.style.animationDelay=(0.45+i*0.22)+'s';
     s.appendChild(el('circle',{cx:p.x+3,cy:p.y+5,r:36,fill:'#3f220f',opacity:.35}));
     s.appendChild(el('circle',{cx:p.x,cy:p.y,r:36,fill:'url(#mb)'}));
     [[-12,-4],[8,10],[14,-12],[-4,14],[2,-16],[-16,10]].forEach(function(q){
@@ -178,7 +233,7 @@ footer{text-align:center;padding:24px 24px 60px;font-size:14px;opacity:.7}
     var tx=right?p.x+46:p.x-46, anchor=right?'start':'end';
     var n=el('text',{x:tx,y:p.y-8,'class':'lbl-n','text-anchor':anchor}); n.textContent='0'+(i+1);
     var t=el('text',{x:tx,y:p.y+22,'class':'lbl-s','text-anchor':anchor}); t.textContent=names[i];
-    s.appendChild(n); s.appendChild(t); g.appendChild(s);
+    s.appendChild(n); s.appendChild(t); g.appendChild(a);
   });
   function el(t,a){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);return e}
   svg.style.setProperty('--len',Math.ceil(L));
