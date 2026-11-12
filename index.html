@@ -92,6 +92,20 @@ li .mark{display:inline-block;vertical-align:middle;margin-left:10px;font-size:1
 .links a:hover{background:var(--chili);border-color:var(--chili);color:var(--noodle)}
 footer{text-align:center;padding:24px 24px 60px;font-size:14px;opacity:.7}
 
+
+/* IG lightbox */
+dialog.ig{margin:auto;border:3px solid var(--meat);padding:0;background:var(--noodle);width:min(480px,94vw);max-height:92svh;
+  box-shadow:8px 8px 0 var(--meat);overflow:hidden}
+dialog.ig::backdrop{background:#2a1608cc}
+dialog.ig .bar{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;
+  background:var(--broth);border-bottom:3px solid var(--meat);position:sticky;top:0;z-index:2}
+dialog.ig .bar a{font-size:14px;color:var(--meat);font-weight:500}
+dialog.ig .close{font:inherit;font-weight:900;font-size:16px;background:var(--meat);color:var(--noodle);border:0;
+  padding:8px 16px;border-radius:999px;cursor:pointer}
+dialog.ig .close:focus-visible{outline:3px solid var(--chili);outline-offset:2px}
+dialog.ig .body{overflow-y:auto;max-height:calc(92svh - 64px);padding:10px}
+dialog.ig .instagram-media{margin:0 auto!important;min-width:0!important;width:100%!important}
+
 /* ---------- Mobile ---------- */
 @media (max-width:760px){
   .bib{transform:rotate(3deg) scale(.8);transform-origin:bottom right}
@@ -203,6 +217,10 @@ footer{text-align:center;padding:24px 24px 60px;font-size:14px;opacity:.7}
     </li>
   </ol>
 </main>
+<dialog class="ig" id="ig" aria-label="IG 貼文">
+  <div class="bar"><a id="ig-open" href="#">在 IG 打開</a><button class="close" id="ig-close" type="button">✕ 關閉</button></div>
+  <div class="body" id="ig-body"></div>
+</dialog>
 <footer>店家營業時間常有變動，出發前請先確認。</footer>
 
 <script>
@@ -241,5 +259,26 @@ footer{text-align:center;padding:24px 24px 60px;font-size:14px;opacity:.7}
 })();
 </script>
 <script async src="https://www.instagram.com/embed.js"></script>
+<script>
+(function(){
+  var dlg=document.getElementById('ig'), body=document.getElementById('ig-body'), open=document.getElementById('ig-open');
+  if(!dlg.showModal) return; // very old browsers: links just work normally
+  document.querySelectorAll('.links a[href*="instagram.com/p/"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      var url=a.getAttribute('href');
+      open.href=url;
+      body.innerHTML='<blockquote class="instagram-media" data-instgrm-permalink="'+url+'?utm_source=ig_embed" data-instgrm-version="14"><a href="'+url+'">在 Instagram 查看這則貼文</a></blockquote>';
+      dlg.showModal();
+      if(window.instgrm) window.instgrm.Embeds.process();
+    });
+  });
+  function shut(){ dlg.close(); body.innerHTML=''; }
+  document.getElementById('ig-close').addEventListener('click',shut);
+  dlg.addEventListener('click',function(e){ if(e.target===dlg) shut(); });
+  dlg.addEventListener('cancel',function(){ body.innerHTML=''; });
+})();
+</script>
+
 </body>
 </html>
