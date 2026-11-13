@@ -167,10 +167,10 @@ dialog.ig .instagram-media{margin:0 auto!important;min-width:0!important;width:1
   <p class="lede">六家店陸續公布中。</p>
   <ol>
     <li id="s1">
-      <div class="photo"><span class="ball">1</span><iframe class="ig-frame" src="https://www.instagram.com/p/DRPFSi0ElPD/embed/" loading="lazy" scrolling="no" allowtransparency="true" allow="encrypted-media; autoplay; clipboard-write" title="Instagram 貼文"></iframe></div>
+      <a class="photo empty" href="https://www.instagram.com/reel/DRPFSi0ElPD/" aria-label="在 Instagram 看第一站的 Reel"><span class="ball">1</span><span class="nopost">▶ 點我看 IG Reel</span></a>
       <div class="info">
         <h3>第一站</h3>
-        <p class="links"><a href="https://www.instagram.com/reel/DRPFSi0ElPD/">看 IG Reel</a></p>
+        <p class="links"><a href="https://www.instagram.com/reel/DRPFSi0ElPD/">在 IG 看 Reel</a></p>
       </div>
     </li>
   </ol>
@@ -220,7 +220,7 @@ dialog.ig .instagram-media{margin:0 auto!important;min-width:0!important;width:1
 (function(){
   var dlg=document.getElementById('ig'), body=document.getElementById('ig-body'), open=document.getElementById('ig-open');
   if(!dlg.showModal) return; // very old browsers: links just work normally
-  document.querySelectorAll('.links a[href*="instagram.com/p/"],.links a[href*="instagram.com/reel/"]').forEach(function(a){
+  document.querySelectorAll('.links a[href*="instagram.com/p/"]').forEach(function(a){
     a.addEventListener('click',function(e){
       e.preventDefault();
       var url=a.getAttribute('href');
