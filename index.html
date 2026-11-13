@@ -81,6 +81,9 @@ li{display:flex;flex-direction:column}
   background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='84' fill='%23fbf6e8'/%3E%3Ccircle cx='100' cy='100' r='70' fill='%23e3a93a'/%3E%3Ccircle cx='78' cy='86' r='22' fill='%2355301a'/%3E%3Ccircle cx='122' cy='92' r='22' fill='%2366391d'/%3E%3Ccircle cx='98' cy='126' r='22' fill='%235d341a'/%3E%3C/svg%3E") center 38%/80% auto no-repeat var(--broth)}
 .photo.empty .nopost{align-self:end;margin-bottom:22px;background:var(--noodle);color:var(--meat);font-size:14px;line-height:1.5;
   text-align:center;padding:6px 14px;border:2px solid var(--meat)}
+.photo.cover{display:block;aspect-ratio:1/1;background:var(--img) center/cover no-repeat var(--broth);text-decoration:none;overflow:visible}
+.photo.cover .play{position:absolute;right:12px;bottom:12px;background:var(--meat);color:var(--noodle);font-size:14px;font-weight:700;padding:6px 12px;border-radius:999px}
+.photo.cover .credit{position:absolute;left:12px;bottom:14px;color:#fff;font-size:12px;text-shadow:0 1px 3px #000a}
 .photo .ball{position:absolute;z-index:2;left:-14px;top:-14px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
   background:radial-gradient(circle at 34% 30%,#9a6338,#55301a 70%);color:var(--noodle);border:3px solid var(--noodle);
   font-family:"Archivo",sans-serif;font-weight:800;font-size:18px}
@@ -167,10 +170,12 @@ dialog.ig .instagram-media{margin:0 auto!important;min-width:0!important;width:1
   <p class="lede">六家店陸續公布中。</p>
   <ol>
     <li id="s1">
-      <a class="photo empty" href="https://www.instagram.com/reel/DRPFSi0ElPD/" aria-label="在 Instagram 看第一站的 Reel"><span class="ball">1</span><span class="nopost">▶ 點我看 IG Reel</span></a>
+      <a class="photo cover" href="https://www.instagram.com/reel/DRPFSi0ElPD/" style="--img:url(images/01.jpg)" aria-label="在 Instagram 看榮記客家湯圓的 Reel"><span class="ball">1</span><span class="play">▶ IG Reel</span><span class="credit">影像：@_88cc_</span></a>
       <div class="info">
-        <h3>第一站</h3>
-        <p class="links"><a href="https://www.instagram.com/reel/DRPFSi0ElPD/">在 IG 看 Reel</a></p>
+        <h3>榮記客家湯圓</h3>
+        <p class="where">東區武昌街 64 號｜湯圓店，但內行人點蔥油拌麵</p>
+        <p class="eat">Google 4.1 ★・4,120 則評論</p>
+        <p class="links"><a href="https://www.instagram.com/reel/DRPFSi0ElPD/">在 IG 看 Reel</a><a href="https://www.google.com/maps/place/?q=place_id:ChIJ0ajpYOo1aDQRFvj0fx5fkgI" target="_blank" rel="noopener">Google 地圖</a></p>
       </div>
     </li>
   </ol>
@@ -183,7 +188,7 @@ dialog.ig .instagram-media{margin:0 auto!important;min-width:0!important;width:1
 
 <script>
 (function(){
-  var names=["第一站","待定","待定","待定","待定","待定"];
+  var names=["榮記湯圓","待定","待定","待定","待定","待定"];
   var svg=document.getElementById('map'), path=document.getElementById('route'), g=document.getElementById('stops');
   var NS="http://www.w3.org/2000/svg", L;
   var pts=[[520,28],[505,120],[225,228],[470,348],[175,458],[445,578],[230,688],[110,742]];
