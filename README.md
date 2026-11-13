@@ -4,5 +4,5 @@
 
 | # | 店家 | 地點 | IG |
 |---|---|---|---|
-| 1 | 榮記客家湯圓 | 新竹市東區武昌街 64 號 | [@_88cc_ Reel](https://www.instagram.com/reel/DRPFSi0ElPD/) |
+| 1 | 榮記客家湯圓 | 新竹市東區武昌街 64 號 | [IG 貼文](https://www.instagram.com/p/CNPq_axjZT5/) |
 | 2–6 | 待定 | | |
