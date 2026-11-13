@@ -167,7 +167,7 @@ dialog.ig .instagram-media{margin:0 auto!important;min-width:0!important;width:1
   <p class="lede">六家店陸續公布中。</p>
   <ol>
     <li id="s1">
-      <div class="photo"><span class="ball">1</span><iframe class="ig-frame" src="https://www.instagram.com/reel/DRPFSi0ElPD/embed/" loading="lazy" scrolling="no" allowtransparency="true" allow="encrypted-media; autoplay; clipboard-write" title="Instagram 貼文"></iframe></div>
+      <div class="photo"><span class="ball">1</span><iframe class="ig-frame" src="https://www.instagram.com/p/DRPFSi0ElPD/embed/" loading="lazy" scrolling="no" allowtransparency="true" allow="encrypted-media; autoplay; clipboard-write" title="Instagram 貼文"></iframe></div>
       <div class="info">
         <h3>第一站</h3>
         <p class="links"><a href="https://www.instagram.com/reel/DRPFSi0ElPD/">看 IG Reel</a></p>
@@ -225,7 +225,7 @@ dialog.ig .instagram-media{margin:0 auto!important;min-width:0!important;width:1
       e.preventDefault();
       var url=a.getAttribute('href');
       open.href=url;
-      body.innerHTML='<iframe class="ig-frame" src="'+url.replace(/\?.*$/,'').replace(/\/?$/,'/')+'embed/" scrolling="no" allowtransparency="true" allow="encrypted-media; autoplay; clipboard-write" title="Instagram 貼文"></iframe>';
+      body.innerHTML='<iframe class="ig-frame" src="'+url.replace(/\?.*$/,'').replace('/reel/','/p/').replace(/\/?$/,'/')+'embed/" scrolling="no" allowtransparency="true" allow="encrypted-media; autoplay; clipboard-write" title="Instagram 貼文"></iframe>';
       dlg.showModal();
     });
   });
