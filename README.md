@@ -8,4 +8,5 @@
 | 2 | 石家魚丸 | 新竹市東區興學街 27、29 號 | [IG Reel](https://www.instagram.com/reel/DfZ0XfXTzXu/) |
 | 3 | 阿城號米粉 | 新竹市北區中山路 75 號（城隍廟內） | [IG 貼文](https://www.instagram.com/p/B-9MG15jtqR/) |
 | 4 | 海瑞摃丸 | 新竹市北區西門街 98 號 | [IG 貼文](https://www.instagram.com/p/CHnMnZuD5YU/) |
-| 5–6 | 待定 | | |
+| 5 | 楊家意麵 | 新竹市北區經國路二段 498 號 | [IG 貼文](https://www.instagram.com/p/DfJLNwViRBl/) |
+| 6 | 待定 | | |
