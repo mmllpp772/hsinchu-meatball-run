@@ -9,4 +9,4 @@
 | 3 | 阿城號米粉 | 新竹市北區中山路 75 號（城隍廟內） | [IG 貼文](https://www.instagram.com/p/B-9MG15jtqR/) |
 | 4 | 海瑞摃丸 | 新竹市北區西門街 98 號 | [IG 貼文](https://www.instagram.com/p/CHnMnZuD5YU/) |
 | 5 | 楊家意麵 | 新竹市北區經國路二段 498 號 | [IG 貼文](https://www.instagram.com/p/DfJLNwViRBl/) |
-| 6 | 待定 | | |
+| 6 | 飛龍肉圓 | 新竹市北區西門街 104 號 | [IG Reel](https://www.instagram.com/reel/DNTDrhgznxW/) |
